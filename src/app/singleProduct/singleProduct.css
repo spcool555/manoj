@@ -1,0 +1,10 @@
+/* Add perspective to the parent container */
+.parent-container {
+  perspective: 1200px; /* Adjust for deeper 3D effect */
+}
+/* Define the zoom effect */
+.zoom-effect {
+  transform: scale(1.25);  /* Smooth zoom-in transition */
+}
+
+

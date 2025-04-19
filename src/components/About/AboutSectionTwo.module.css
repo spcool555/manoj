@@ -1,0 +1,39 @@
+/* AboutSectionTwo.module.css */
+
+
+#about{
+    background-color: darkgrey;
+}
+.sectionBg {
+    background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+  }
+  
+  .textSection {
+    animation: fadeInRight 1s ease-in-out;
+  }
+  
+  .imageWrapper {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .imageWrapper:hover {
+    transform: scale(1.03);
+  }
+  
+  .image {
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

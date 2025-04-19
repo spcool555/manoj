@@ -1,0 +1,19 @@
+.hh{
+  font-size: 2em;
+  font-weight: 700;
+  margin-right: 2em;
+color: aliceblue;
+}
+.pp{
+  color: aliceblue;
+}
+.brnds{
+  background-image: url('https://cdn.pixabay.com/photo/2017/08/01/22/38/flash-2568381_1280.jpg');
+}
+
+.ab{
+  padding-top: 7rem;
+}
+.img-s{
+  padding: 22px !important;
+}
