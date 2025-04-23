@@ -10,11 +10,11 @@ const Contact = () => {
       <img className="w-full lg:w-1/2 xl:w-full max-w-[400px] lg:order-2" src="https://iili.io/2ysFUen.png" alt=""/>
       <div className="text-center md:text-left">
         <h1
-          className="text-2xl leading-[48px] md:text-5xl md:leading-[58px] lg:text-[50px] lg:leading-[70px] font-bold mb-6 md:mb-5">
-          Power Up with Cutting-Edge Electrical Solutions!
+          className="text-2xl leading-[48px] md:text-5xl md:leading-[58px] lg:text-[30px] lg:leading-[70px] font-bold mb-4 md:mb-4">
+ Empowering Industries with Precision Engineering
         </h1>
         <p className="text-xl leading-[27px]  font-normal sm:text-[24px] mb-8 md:mb-12">
-        Explore high-performance electrical equipment engineered with precision and durability to power your home, office, and industry with efficiency and safety.  
+        Explore premium-quality stainless steel valves, homogenizer spare parts, and expert machinery solutions crafted by <span style={{color:'#EA6321'}}> Manoj Engineering Consultant. </span>   Trusted across Nagpur and beyond for reliable products, competitive pricing, and on-time delivery. We also specialize in Milk Homogenizer Repairing Services, ensuring your operations never stop
         </p>
         <section id="contact" className="overflow-hidden">
       <div className="lg:pr-16">

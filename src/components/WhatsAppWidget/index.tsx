@@ -8,11 +8,11 @@ function WhatsAppWidget() {
 
 
       <FloatingWhatsApp
-  phoneNumber="7780599423"  // Your WhatsApp number
-  accountName="matrixincorporation"
+  phoneNumber="8767474066"  // Your WhatsApp number
+  accountName="Manoj Engineering"
   statusMessage="Typically replies within a few hours"
   chatMessage="Hello! How can we help you today?"
-  avatar="https://matrixincorporation.com/_next/image?url=%2Fimages%2Flogo%2Flogo22.png&w=256&q=75"  // URL for an avatar image
+  avatar="/images/logo/official.jpeg"  // URL for an avatar image
   // allowClickAway={true}  // Allow closing by clicking outside the chat window
   notification={true}  // Enable notification
   notificationSound={true}  // Enable notification sound

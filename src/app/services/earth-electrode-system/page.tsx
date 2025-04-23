@@ -199,12 +199,12 @@ const EarthElectrodeSystem = () => {
                     Our friendly team are on hand to answer any questions you
                     might have.
                   </p>
-                  <p>+91-40-31603812 or service@matrixincorporation.com</p>
+                  <p>+91-40-31603812 or service@Manoj Engineering Consultant.com</p>
                 </div>
               </div>
             </div>
 
-          <img src="https://www.techwinspd.com/uploads/image/20210728/electrical-power-building-power-lighting-protection-solution.jpg" alt="matrixincorporation" style={{width:"100%"}}/>
+          <img src="https://www.techwinspd.com/uploads/image/20210728/electrical-power-building-power-lighting-protection-solution.jpg" alt="Manoj Engineering Consultant" style={{width:"100%"}}/>
           </div> 
         </div>
       </section> */}

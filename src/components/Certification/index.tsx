@@ -2,25 +2,22 @@ import "./Brands.css";
 
 const Certification = () => {
   const certificates = [
-    { img: "1.jpg", label: "l1.png" },
-    { img: "2.jpg", label: "l2.png" },
-    { img: "3.jpg", label: "l3.png" },
-    { img: "4.jpg", label: "l4.png" },
-    { img: "5.jpg", label: "l5.png" },
-    { img: "6.jpg", label: "l6.png" },
-    { img: "7.jpg", label: "l7.png" },
-    { img: "8.jpg", label: "l8.png" },
-    { img: "9.jpg", label: "l9.png" },
-    { img: "10.jpg", label: "l10.png" },
-    { img: "11.jpg", label: "NEMA", isText: true },
-    { img: "12.jpg", label: "l12.png" },
+    { img: "c1.jpg", label: "l1.png" },
+    { img: "c2.jpg", label: "l2.png" },
+    { img: "c3.jpg", label: "l3.png" },
+    { img: "c4.jpg", label: "l4.png" },
+    { img: "c5.jpg", label: "l5.png" },
+    { img: "c6.jpg", label: "l6.png" },
+    { img: "c7.jpg", label: "l7.png" },
+    { img: "c8.jpg", label: "l8.png" },
+   
   ];
 
   return (
     <>
       <div className="relative mt-16 bg-black text-white overflow-hidden">
   <div className="absolute inset-0">
-    <img src="https://img.freepik.com/free-photo/burning-lamp-hangs-dark-blurred-background-space-text_169016-62731.jpg?t=st=1741696604~exp=1741700204~hmac=c77a537f64cb159025396b5dfe3c329f78f59cb6b5368d01b7a6ed8bdf70b52d&w=1380" alt="Background Image" className="object-cover object-center w-full h-full" />
+    <img src="/images/manoj-slider/3.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
     <div className="absolute inset-0 bg-black opacity-50"></div>
   </div>
   
@@ -41,17 +38,9 @@ const Certification = () => {
                   src={`./images/certificate/${certificate.img}`}
                   alt={`Certificate ${index + 1}`}
                 />
-                {certificate.isText ? (
-                  <b>
-                    <h3>{certificate.label}</h3>
-                  </b>
-                ) : (
-                <center>  <img
-                    src={`./images/certificate/${certificate.label}`}
-                    alt=""
-                    style={{ width: "15%", borderRadius: "10px" }}
-                  /></center>
-                )}
+              
+      
+               
               </div>
             ))}
           </div>

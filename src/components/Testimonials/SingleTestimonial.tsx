@@ -1,5 +1,6 @@
 import { Testimonial } from "@/types/testimonial";
 import Image from "next/image";
+
 const starIcon = (
   <svg width="18" height="16" viewBox="0 0 18 16" className="fill-current">
     <path d="M9.09815 0.361679L11.1054 6.06601H17.601L12.3459 9.59149L14.3532 15.2958L9.09815 11.7703L3.84309 15.2958L5.85035 9.59149L0.595291 6.06601H7.0909L9.09815 0.361679Z" />
@@ -7,43 +8,40 @@ const starIcon = (
 );
 
 const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
-  const { star, name, image, content, designation } = testimonial;
+  const { star, name, image, content, designation} = testimonial;
 
-  let ratingIcons = [];
-  for (let index = 0; index < star; index++) {
-    ratingIcons.push(
-      <span key={index} className="text-yellow">
-        {starIcon}
-      </span>,
-    );
-  }
+  const ratingIcons = Array.from({ length: star }).map((_, index) => (
+    <span key={index} className="text-yellow">{starIcon}</span>
+  ));
 
-  return (<>
-  <div className="max-w-md mx-auto">
-  <div
-    className="relative overflow-hidden bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl shadow-2xl p-8 text-white">
-    <div className="absolute top-0 left-0 w-full h-full bg-white opacity-10 transform -skew-x-12"></div>
-    <div className="relative z-10">
-      <svg className="w-12 h-12 mb-4 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-      </svg>
-      <div className="mb-5 flex items-center space-x-1">{ratingIcons}</div>
+  return (
+    <div className="w-full h-full">
+      <div className="rounded-xl bg-white p-6 shadow-lg hover:shadow-xl transition duration-300 dark:bg-dark dark:shadow-gray-800 dark:hover:shadow-white/10">
+        {/* Rating and Header */}
+      
 
-      <p className="text-md mb-4">
-        &quot;{content}&quot;</p>
-      <div className="flex items-center">
-      {/* <Image src={image} alt= fill className="w-12 h-12 rounded-full mr-4 border-2 border-purple-300"/> */}
-        <img src={image} alt={name} className="w-12 h-12 rounded-full mr-4 border-2 border-purple-300"/>
-        <div>
-          <h4 className="font-semibold">{name}</h4>
-          <p className="text-purple-200">{designation}</p>
+        {/* Feedback Content */}
+        <p className="mb-4 whitespace-pre-line text-base leading-relaxed text-body-color dark:text-white">
+          {content}
+        </p>
+
+     
+
+        {/* Divider */}
+        <div className="border-t border-gray-200 dark:border-white/10 pt-4 mt-4 flex items-center gap-4">
+          {/* Avatar */}
+          <div className="relative w-[50px] h-[50px] rounded-full overflow-hidden">
+            <Image src={image} alt={name} fill className="object-cover" />
+          </div>
+
+          {/* User Info */}
+          <div>
+            <h3 className="text-base font-semibold text-dark dark:text-white">{name}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{designation}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-    </>
   );
 };
 

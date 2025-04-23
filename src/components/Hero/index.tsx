@@ -1,9 +1,10 @@
 'use client'
 import Link from "next/link";
 import { useState, useEffect } from 'react';
-import img1 from '../../../public/images/sk/slide (1).jpeg'
-import img2 from '../../../public/images/sk/slide (2).jpeg'
-import img3 from '../../../public/images/sk/slide (3).jpeg'
+import img1 from '../../../public/images/manoj-slider/about_slider.jpg'
+import img2 from '../../../public/images/manoj-slider/Lube-Pumps-Manufacturer.jpg'
+import img3 from '../../../public/images/manoj-slider/banner3.jpg'
+// import img4 from '../../../public/images/manoj-slider/homos2.jpg'
 import Image from "next/image";
 const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -11,6 +12,7 @@ const Hero = () => {
     img1,
     img2,
     img3,
+    // img4,
   ];
 
   useEffect(() => {

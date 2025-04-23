@@ -13,7 +13,7 @@ const Footer = () => {
       <div>
         {/* <img src="/images/logo/official.png" alt="Logo" style={{ width: "80%" }} /> */}
         <img
-  src="/images/logo/official.png"
+  src="/images/logo/official.jpeg"
   alt="Logo"
   className="w-4/5 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
 />      
@@ -28,9 +28,7 @@ const Footer = () => {
         <p className="mb-4">
           <a className="text-white hover:text-[#FAA605]" href="/about">About</a>
         </p>
-        <p className="mb-4">
-          <a className="text-white hover:text-[#FAA605]" href="/Projects">Projects</a>
-        </p>
+      
         <p className="mb-4">
           <a className="text-white hover:text-[#FAA605]" href="/certification">Certification</a>
         </p>      
@@ -39,17 +37,16 @@ const Footer = () => {
       {/* Useful links section */}
       <div className="text-white">
         <h6 className="mb-4 font-semibold uppercase">Useful Links</h6>
-        <p className="mb-4">
-          <Link href="/privacyPolicy"  className="text-white hover:text-[#fff350]">Privacy Policy</Link>
-        </p>
+     
         <p className="mb-4">
           <Link href="/contact" className="text-white hover:text-[#fff350]">Contact Us</Link>
         </p>
-        <p className="mb-4">
-          <Link href="/tc" className="text-white hover:text-[#fff350]">Terms & Conditions</Link>
-        </p>
+   
         <p>
           <Link href="/about" className="text-white hover:text-[#fff350]">Enquiry</Link>
+        </p>
+        <p>
+          <Link href="/admin" className="text-white hover:text-[#fff350]">Admin</Link>
         </p>
       </div>
 
@@ -88,8 +85,11 @@ const Footer = () => {
   
   {/* Copyright */}
   <div className="w-full border-t-2 flex justify-between border-[#F7BE38] py-4 text-center text-sm px-4 bg-[#000000] text-white">
-   <h1> © 2024 Matrixincorporation</h1>
-   <h1>Designed & Developed By KStar Technology</h1>
+   <h1> © 2003 Manoj Engineering Consultant</h1>
+   <a href="">
+
+   <h1> Designed & Developed By : Shubham Kohad</h1>
+   </a>
   </div>
 </footer>
 

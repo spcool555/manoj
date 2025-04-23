@@ -14,7 +14,7 @@ const ContactPage = () => {
     <>
       <div className="relative mt-16 bg-black text-white overflow-hidden">
   <div className="absolute inset-0">
-    <img src="https://img.freepik.com/free-photo/burning-lamp-hangs-dark-blurred-background-space-text_169016-62731.jpg?t=st=1741696604~exp=1741700204~hmac=c77a537f64cb159025396b5dfe3c329f78f59cb6b5368d01b7a6ed8bdf70b52d&w=1380" alt="Background Image" className="object-cover object-center w-full h-full" />
+    <img src="images/manoj-slider/3.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
     <div className="absolute inset-0 bg-black opacity-50"></div>
   </div>
   
@@ -28,13 +28,8 @@ const ContactPage = () => {
             <div className="grid gap-8 md:grid-cols-2">
               <div className="h-full md:pr-6">
                 <p className="mb-12 mt-3 text-lg text-gray-600 dark:text-slate-400">
-                  <b style={{ color: "#F6A705" }}>Our Strength</b> <br />
-                  What are the reasons behind our capacity in meeting all the
-                  market demands? The very first reason is our well-designed
-                  supply unit. Our supply chain is powered by world-class
-                  machinery and highly trained staff. With a rich heritage of
-                  over 5 years, Matrix Incorporation has demonstrated itself as
-                  a leader in the global market.
+                  <b style={{ color: "#EA6321" }}>What are the reasons behind our capacity to meet all market demands?</b> <br />
+                  The foremost reason is our well-structured infrastructure and experienced technical team. Our operations are driven by state-of-the-art machinery and skilled professionals who ensure high standards in every product and service we offer. With a proud legacy of over 20 years since our establishment in 2003, Manoj Engineering Consultant has built a strong reputation in the market for reliability, quality, and timely delivery, making us a trusted name in the industry.
                 </p>
                 <ul className="mb-6 space-y-6 md:mb-0">
                   <li className="flex">
@@ -60,8 +55,7 @@ const ContactPage = () => {
                         Reg. Address
                       </h3>
                       <p className="text-gray-600 dark:text-slate-400">
-                        #20-4-529/5&6 Chowmohalla Palace Hyderabad-500002
-                        Telangana State India{" "}
+                      A-1,Near, Electronic Zone Hingna, Road Near,Petrol, Pump M.I.D.C., Lokmanya Nagar, Nagpur-440016, Maharashtra, India{" "}
                       </p>
                       <p className="text-gray-600 dark:text-slate-400"></p>
                     </div>
@@ -90,15 +84,16 @@ const ContactPage = () => {
                         Contact
                       </h3>
                       <p className="text-gray-600 dark:text-slate-400">
-                        Mob No.+91-7780599423 / +91-9052729776 Skype / WhatsApp
-                        / wechat: +91-9052729776 Tel No. +91-40-31603812 Fax No.
-                        +91-40-31603812
+                      Utkarsh P. Rathod, 8767474066
                       </p>
                       <p className="text-gray-600 dark:text-slate-400">
-                        Mail: service@matrixincorporation.com
+                      Prakash K. Rathod, 9422801983
                       </p>
                       <p className="text-gray-600 dark:text-slate-400">
-                        Mail: sales@matrixincorporation.com
+                        Mail:  manojenggngp@gmail.com
+                      </p>
+                      <p className="text-gray-600 dark:text-slate-400">
+                        Mail:  utkarshrathod04@gmail.com
                       </p>
                     </div>
                   </li>
@@ -125,24 +120,15 @@ const ContactPage = () => {
                         Working hours
                       </h3>
                       <p className="text-gray-600 dark:text-slate-400">
-                        Monday - Saturday: 10:00 - 07:00
+                        Monday - Sunday: 09 AM - 09 PM
                       </p>
                       <p className="text-gray-600 dark:text-slate-400">
-                        Sunday: Closed
+                        Wednesday: Closed
                       </p>
                     </div>
                   </li>
                 </ul>
-                <iframe
-                  src="https://www.google.com/maps/d/embed?mid=1hXII84tPkwBmWIlxAw3K9qtbK1dDhqM&hl=en&ehbc=2E312F"
-                  width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+                          </div>
               <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
                 <h2 className="mb-4 text-2xl font-bold dark:text-white">
                   Enquiry Form
@@ -163,121 +149,21 @@ const ContactPage = () => {
                         name="name"
                       />
                     </div>
+                   
+                   
+                 
                     <div className="mx-0 mb-1 sm:mb-4">
                       <label
-                        htmlFor="email"
+                        htmlFor="number"
                         className="pb-1 text-xs uppercase tracking-wider"
                       ></label>
                       <input
-                        type="email"
-                        id="email"
-                        autoComplete="email"
-                        placeholder="Your email address"
-                        className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                        name="email"
-                      />
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label
-                        htmlFor="dropdown"
-                        className="pb-1 text-xs uppercase tracking-wider"
-                      >
-                        Select an option
-                      </label>
-                      <select
-                        id="dropdown"
-                        name="dropdown"
-                        className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                      >
-                        <option value="option1">Consultant</option>
-                        <option value="option2">Electrical Contractor</option>
-                        <option value="option3">
-                          Electrical Trader/Distributer
-                        </option>
-
-                        <option value="option3">
-                          Lightning Protection Design Services
-                        </option>
-                        <option value="option3">Installation Services</option>
-                        <option value="option3">Project</option>
-                        <option value="option3">Export</option>
-                        <option value="option3">Consumer</option>
-                      </select>
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label className="pb-1 text-xs uppercase tracking-wider">
-                        Choose options
-                      </label>
-                      <div className="flex flex-col">
-                        <label className="mb-1">
-                          <input
-                            type="checkbox"
-                            name="checkboxOption"
-                            value="earthingProducts"
-                            className="mr-2"
-                          />
-                          Earthing / Grounding Products
-                        </label>
-
-                        <label className="mb-1">
-                          <input
-                            type="checkbox"
-                            name="checkboxOption"
-                            value="lightningProtectionSystem"
-                            className="mr-2"
-                          />
-                          Lightning Protection System
-                        </label>
-                        <label className="mb-1">
-                          <input
-                            type="checkbox"
-                            name="checkboxOption"
-                            value="surgeProtectionDevice"
-                            className="mr-2"
-                          />
-                          Cable Trays
-                        </label>
-                        <label className="mb-1">
-                          <input
-                            type="checkbox"
-                            name="checkboxOption"
-                            value="surgeProtectionDevice"
-                            className="mr-2"
-                          />
-                          Metals Exothermic Welding
-                        </label>
-                        <label className="mb-1">
-                          <input
-                            type="checkbox"
-                            name="checkboxOption"
-                            value="surgeProtectionDevice"
-                            className="mr-2"
-                          />
-                          Conductors
-                        </label>
-                        <label className="mb-1">
-                          <input
-                            type="checkbox"
-                            name="checkboxOption"
-                            value="surgeProtectionDevice"
-                            className="mr-2"
-                          />
-                          Fastners & Fixing
-                        </label>
-                      </div>
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label
-                        htmlFor="subject"
-                        className="pb-1 text-xs uppercase tracking-wider"
-                      ></label>
-                      <input
-                        type="text"
+                        type="number"
                         id="subject"
                         autoComplete="subject"
-                        placeholder="Subject"
+                        placeholder="Contact Number"
                         className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                        name="subject"
+                        name="contact"
                       />
                     </div>
                     <div className="mx-0 mb-1 sm:mb-4">
@@ -302,7 +188,11 @@ const ContactPage = () => {
                     </button>
                   </div>
                 </form>
+                <hr />
+  <br />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3722.2752879616905!2d78.98741127525858!3d21.101588280566077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA2JzA1LjciTiA3OMKwNTknMjQuMCJF!5e0!3m2!1sen!2sin!4v1745082245526!5m2!1sen!2sin" width="600" height="300" style={{border:'0'}} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
+              
             </div>
           </div>
         </div>

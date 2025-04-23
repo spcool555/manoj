@@ -12,12 +12,12 @@ const Video = () => {
   return (
     <div className="relative -ml-2 overflow-hidden">
     <div className="absolute inset-0">
-      <img src="https://img.freepik.com/free-psd/electricity-transmission-towers-generative-ai_587448-1941.jpg?t=st=1741853992~exp=1741857592~hmac=3140863f3f230ba477b8c3b63d269c8489573c13b05037145bd22458ded6c28f&w=1380" alt="Background Image" className="object-cover object-center w-full h-full" />
+      <img src="https://alliancefluidhandling.com/wp-content/uploads/elementor/thumbs/GEA-MACHINE-q8arnk6b128z7j004cammtvdbvpypozxb02y7wyscg.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
       <div className="absolute inset-0 bg-black opacity-50"></div>
     </div>
     
     <div className="relative z-10 flex flex-col justify-center items-center h-full text-center pt-12">
-      <h1 className="text-4xl lg:text-5xl leading-tight my-4 text-white">10+ Years Of Trust</h1>
+      <h1 className="text-4xl lg:text-5xl leading-tight my-4 text-white">40+ Years Of Trust</h1>
       <p className="w-11/12 lg:w-3/5 text-lg text-white mb-8">With over 10 years of trusted expertise, we specialize in the production of high-quality electrical equipment, ensuring reliability, innovation, and industry-leading standards.</p>
     </div>
 

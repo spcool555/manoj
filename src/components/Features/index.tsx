@@ -25,15 +25,15 @@ const Features = () => {
   return (  
     <>
       <section id="features" className="relative">
-      <section className=" w-full px-8 py-16">
+      <section className=" w-full px-8 py-6">
       {/* <!-- Content --> */}
   <div className="relative z-10 container mx-auto px-4 text-center text-black">
     <h1 className="mb-6 text-xl font-bold tracking-tight sm:text-2xl md:text-6xl lg:text-4xl">
-    Our Products <span className="relative whitespace-nowrap text-[#FAA605] dark:text-[#FAA605]">        <span className="relative">Range</span>
+    Our Products <span className="relative whitespace-nowrap text-[#EA6321] dark:text-[#EA6321]">        <span className="relative">Range</span>
       </span>
     </h1>
-    <p className="mx-auto mb-16 max-w-2xl text-lg">
-    Matrix Incorporation is a well-reputed organisation located in Secunderabad, Telangana. Our company brings an incredible change in the products related
+    <p className="mx-auto mb-6  text-lg">
+    Established in  Nagpur, Maharashtra, we “Manoj Engineering Consultant ” are a Sole Proprietorship firm, engaged as the foremost Manufacturer of Stainless Steel Valve, Homogenizer Spare Parts , etc. Our products are high in demand due to their premium quality and affordable prices. Furthermore, we ensure to timely deliver these products to our clients, through this we have gained a huge clients base in the market. We also provide Milk Homogenizer Repairing Service.
     </p>
   </div>
 
@@ -73,7 +73,7 @@ const Features = () => {
         {/* {isModalOpen && (
        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
        <div className="relative p-6 bg-white rounded-lg shadow-2xl max-w-md w-full text-center animate-slide-down transform transition-all duration-300 ease-in-out">
-         <h2 className="text-2xl font-extrabold mb-4 text-gray-800">Matrixincorporation</h2>
+         <h2 className="text-2xl font-extrabold mb-4 text-gray-800">Manoj Engineering Consultant</h2>
           <img src="https://image.made-in-china.com/226f3j00VTEWhNgoqIYl/B-C-385V-20ka-65ka-SPD-B-C-T1-T2-AC-Surge-Protective-Device-4-Poles-Surge-Suppressor.webp" alt="" />
          <button
            onClick={() => setIsModalOpen(false)}

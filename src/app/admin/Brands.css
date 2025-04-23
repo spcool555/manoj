@@ -1,0 +1,16 @@
+.hh{
+  font-size: 2em;
+  font-weight: 700;
+  margin-right: 2em;
+color: aliceblue;
+}
+.pp{
+  color: aliceblue;
+}
+.brnds{
+  background-image: url('https://img.freepik.com/free-photo/burning-lamp-hangs-dark-blurred-background-space-text_169016-63455.jpg?t=st=1741695781~exp=1741699381~hmac=d5c80de78b7d9f968565528b68f9c06ea34a497472d197e87d5b922f2bd898fb&w=1380');
+}
+
+.ab{
+  padding-top: 7rem;
+}

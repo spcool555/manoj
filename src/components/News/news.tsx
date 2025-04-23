@@ -1,0 +1,50 @@
+'use client'
+import Image from 'next/image';
+
+export default function NewsPage() {
+  return (
+    <div className="min-h-screen bg-gray-100  flex items-center justify-center">
+      <div className="bg-white shadow-lg rounded-lg max-w-8xl w-full grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
+
+        {/* Left Side - Image */}
+        <div className="relative w-full h-96 rounded-lg overflow-hidden">
+          <Image
+            src="/images/manoj-slider/manoj.png" // use string path from public/
+            alt="News"
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+
+        {/* Right Side - Summary */}
+        <div className="flex flex-col justify-between">
+          <div>
+            <h1 className="text-3xl font-bold mb-4 text-gray-800">MANOJ ENGINEERING
+            CONSULTANT</h1>
+            <p className="text-gray-700 mb-4">
+            Welcome to Manoj Engineering Consultant your premier destination for all
+your homogenizer spare parts and service needs!
+At Manoj Engineering Consultant we understand the critical role that
+homogenizers play in various industries, from food and beverage to
+pharmaceuticals and cosmetics. That's why we're dedicated to providing topquality spare parts and expert service to keep your homogenizers running
+smoothly and efficiently.
+Our website offers a comprehensive selection of genuine OEM and aftermarket
+spare parts for all major homogenizer brands, ensuring compatibility and
+performance. Whether you need valves, plungers, seals, or any other component,
+you'll find it in our extensive catalog.
+But we're more than just a parts supplier - we're your partner in maximizing the
+lifespan and performance of your homogenizers. Our team of experienced
+technicians is available to provide prompt and professional servicing, including
+maintenance, repairs, and upgrades. With our expertise, you can trust that your
+equipment will operate at peak efficiency, minimizing downtime and maximizing
+productivity.            </p>
+            {/* <p className="text-gray-600 text-sm">
+              Published: April 19, 2025 | By: The News Desk
+            </p> */}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}

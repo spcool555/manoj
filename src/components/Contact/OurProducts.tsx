@@ -7,7 +7,7 @@ const NewsLatterBox2 = () => {
 
   return (
     <div className="relative z-10 rounded-sm bg-white p-5 dark:bg-gray-dark sm:p-11 lg:p-5 xl:p-5 ">
-      <h3 className="mb-4 text-2xl font-bold leading-tight text-black dark:text-white">
+      <h3 className="mb-4 text-xl font-bold leading-tight text-black dark:text-white">
         OUR PRODUCTS
       </h3>
 
@@ -15,39 +15,25 @@ const NewsLatterBox2 = () => {
         <ul className="list-inside lg:list-disc">
           <li className="mb-2">
             <a href="#" className="text-black hover:text-[#FAA605] hover:underline">
-              Earthing / Grounding
+            ARIETE SERIES ARIETE
             </a>
           </li>
           <li className="mb-2">
             <a href="#" className="text-black hover:text-[#FAA605] hover:underline">
-              Lightning Protection
+            TETRA ALEX
             </a>
           </li>
           <li className="mb-2">
             <a href="#" className="text-black hover:text-[#FAA605] hover:underline">
-          Cable Trays
+            APV MANTON GAULIN
             </a>
           </li>
           <li className="mb-2">
             <a href="#" className="text-black hover:text-[#FAA605] hover:underline">
-             Metals
+           FBF  BUFFALO SERIES
             </a>
           </li>
-          <li className="mb-2">
-            <a href="#" className="text-black hover:text-[#FAA605] hover:underline">
-              Exothermic Welding
-            </a>
-          </li>
-          <li className="mb-2">
-            <a href="#" className="text-black hover:text-[#FAA605] hover:underline">
-              Conductors
-            </a>
-          </li>
-          <li className="mb-2">
-            <a href="#" className="text-black hover:text-[#FAA605] hover:underline">
-              Fastners & Fixing
-            </a>
-          </li>
+        
         </ul>
       </div>
 
@@ -74,15 +60,7 @@ const NewsLatterBox2 = () => {
                 y2="15.3509"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+               
               </linearGradient>
             </defs>
           </svg>
@@ -110,15 +88,7 @@ const NewsLatterBox2 = () => {
                 y2="10.2511"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+              
               </linearGradient>
             </defs>
           </svg>
@@ -146,15 +116,7 @@ const NewsLatterBox2 = () => {
                 y2="26.7564"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+              
               </linearGradient>
             </defs>
           </svg>
@@ -199,15 +161,7 @@ const NewsLatterBox2 = () => {
                 y2="237.617"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+               
               </linearGradient>
               <linearGradient
                 id="paint1_linear_1028_603"
@@ -217,15 +171,7 @@ const NewsLatterBox2 = () => {
                 y2="212.617"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+               
               </linearGradient>
               <linearGradient
                 id="paint2_linear_1028_603"
@@ -235,15 +181,7 @@ const NewsLatterBox2 = () => {
                 y2="221.617"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+               
               </linearGradient>
               <linearGradient
                 id="paint3_linear_1028_603"
@@ -253,15 +191,7 @@ const NewsLatterBox2 = () => {
                 y2="188.617"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+
               </linearGradient>
             </defs>
           </svg>

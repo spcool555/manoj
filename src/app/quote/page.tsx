@@ -80,11 +80,11 @@ const Quote = () => {
               </div>
 
               <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
-                <h2 className="mb-4 text-2xl font-bold dark:text-white">Ready to Get Started?</h2>
+                <h2 className="mb-4 text-2xl font-bold dark:text-white">Send Enquiry</h2>
                 <form id="contactForm">
                   <div className="mb-6">
                     <div className="mx-0 mb-1 sm:mb-4">
-                      <label htmlFor="name" className="pb-1 text-xs uppercase tracking-wider"></label>
+                      <label htmlFor="name" className="pb-1 text-xs uppercase tracking-wider">Enter Name</label>
                       <input
                         type="text"
                         id="name"
@@ -95,80 +95,21 @@ const Quote = () => {
                       />
                     </div>
                     <div className="mx-0 mb-1 sm:mb-4">
-                      <label htmlFor="email" className="pb-1 text-xs uppercase tracking-wider"></label>
+                      <label htmlFor="contact" className="pb-1 text-xs uppercase tracking-wider">Enter Contact Number</label>
                       <input
-                        type="email"
-                        id="email"
-                        autoComplete="email"
-                        placeholder="Your email address"
+                        type="number"
+                        id="contact"
+                        autoComplete="contact"
+                        placeholder="Your contact number"
                         className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                        name="email"
+                        name="contact"
                       />
                     </div>
+                 
+                  
+             
                     <div className="mx-0 mb-1 sm:mb-4">
-                      <label htmlFor="email" className="pb-1 text-xs uppercase tracking-wider"></label>
-                      <input
-                        type="email"
-                        id="email"
-                        autoComplete="email"
-                        placeholder="Your email address"
-                        className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                        name="email"
-                      />
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label htmlFor="dropdown" className="pb-1 text-xs uppercase tracking-wider">
-                        Select an option
-                      </label>
-                      <select
-                        id="dropdown"
-                        name="dropdown"
-                        className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                      >
-                        <option value="option1">Consultant</option>
-                        <option value="option2">Electrical Contractor</option>
-                        <option value="option3">Electrical Trader/Distributer</option>
-                        <option value="option4">Surge Protection Product</option>
-                        <option value="option5">Earthing Design Service</option>
-                        <option value="option6">Lightning Protection Design Services</option>
-                        <option value="option7">Installation Services</option>
-                      </select>
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label className="pb-1 text-xs uppercase tracking-wider">Choose options</label>
-                      <div className="flex flex-col">
-                        <label className="mb-1">
-                          <input type="checkbox" name="checkboxOption" value="earthingProducts" className="mr-2" />
-                          Earthing Products
-                        </label>
-                        <label className="mb-1">
-                          <input type="checkbox" name="checkboxOption" value="lightningProtectionProducts" className="mr-2" />
-                          Lightning Protection Products
-                        </label>
-                        <label className="mb-1">
-                          <input type="checkbox" name="checkboxOption" value="exothermicWeldingProducts" className="mr-2" />
-                          Exothermic Welding Products
-                        </label>
-                        <label className="mb-1">
-                          <input type="checkbox" name="checkboxOption" value="surgeProtectionProducts" className="mr-2" />
-                          Surge Protection Products
-                        </label>
-                        <label className="mb-1">
-                          <input type="checkbox" name="checkboxOption" value="earthingDesignServices" className="mr-2" />
-                          Earthing Design Services
-                        </label>
-                        <label className="mb-1">
-                          <input type="checkbox" name="checkboxOption" value="lightningProtectionDesignServices" className="mr-2" />
-                          Lightning Protection Design Services
-                        </label>
-                        <label className="mb-1">
-                          <input type="checkbox" name="checkboxOption" value="installationServices" className="mr-2" />
-                          Installation Services
-                        </label>
-                      </div>
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label htmlFor="textarea" className="pb-1 text-xs uppercase tracking-wider"></label>
+                      <label htmlFor="textarea" className="pb-1 text-xs uppercase tracking-wider">Enter Message</label>
                       <textarea
                         id="textarea"
                         name="textarea"

@@ -6,11 +6,11 @@ const Blog = () => {
   return (<>
     <section
       id="blog"
-      className="bg-blue-50 dark:bg-bg-color-dark py-16 md:py-20 lg:py-28"
+      className="bg-blue-50 dark:bg-bg-color-dark  md:py-10 lg:py-8"
     >
       <div className="container">
         <SectionTitle
-          title="TECHNICAL SERVICES"
+          title="Brands "
           paragraph=""
           center
           />
@@ -23,6 +23,11 @@ const Blog = () => {
           ))}
         </div>
       </div>
+      <br />
+      <center>
+
+        <p>Disclaimer: We are not affiliated with the brands shown. All trademarks and logos belong to their respective owners.</p>
+      </center>
     </section><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
 
 </>

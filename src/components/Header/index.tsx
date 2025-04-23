@@ -79,17 +79,9 @@ const Header = () => {
 </div>
     </div>
       
-      {/* <header
-        className={`header top-15 left-0 z-40 flex w-full items-center ${
-          sticky
-            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
-            ? "fixed z-[9999] bg-[#FBB73F] pb-3 !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
-            ? ""
-            : "absolute bg-[#FBB73F]"
-        }`}
-      > */}
+     
       <header
-        className={`header top-15 left-0 z-40 flex w-full items-center absolute bg-[#FAA605]`}
+        className={`header top-15 left-0 z-40 flex w-full items-center absolute bg-[#EA6321]`}
       >
         <div className="container">
           {/* <div className="relative -mx-4 flex items-center justify-between mt-3"> */}
@@ -102,21 +94,15 @@ const Header = () => {
                   sticky ? "pt-2 lg:pt-2  -mt-5" : "pt-2"
                 } `}
               >
-                {/* <Image
-                  src="/images/logo/official.png"
-                  alt="logo"
-                  // width={140}
-                  // height={30}
-                  className="dark:hidden w-full"
-                /> */}
+           
                 
   <img
-    src="/images/logo/official.png"
+    src="/images/logo/official.jpeg"
     alt="logo"
     className="object-contain h-[75px] py-0.5 w-full"
   />
                 <Image
-                  src="/images/logo/logo22.png"
+                  src="/images/logo/official.jpeg"
                   alt="logo"
                   width={140}
                   height={30}
@@ -204,7 +190,7 @@ const Header = () => {
                                 className={`grid ${
                                   menuItem.title === "Services"
                                     ? "lg:grid-cols-4"
-                                    : "lg:grid-cols-7"
+                                    : "lg:grid-cols-4"
                                 } gap-4 p-4`}
                                 // }`}
                               >
@@ -212,7 +198,7 @@ const Header = () => {
                                   menuItem.submenu.map(
                                     (submenuCategory, subIndex) => (
                                       <div key={subIndex}>
-                                        <a href={submenuCategory.path}>
+                                      
                                         <h4 className=" font-semibold text-dark dark:text-white">
                                           {submenuCategory.title}
                                         </h4>
@@ -242,11 +228,11 @@ const Header = () => {
                                                 >
                                                   {submenuItem.title}
                                                 </Link>
-                                              </li>
+                                            </li>
                                             ),
                                           )}
                                         </ul>
-                                        </a>
+                                    
                                       </div>
                                     ),
                                   )}
