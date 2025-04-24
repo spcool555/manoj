@@ -74,7 +74,7 @@ const Header = () => {
     <>
     <div className="">
 
-    <div className="hidden lg:block">
+    <div className="">
   <TopHeader />
 </div>
     </div>
