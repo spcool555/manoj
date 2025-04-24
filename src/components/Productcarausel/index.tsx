@@ -87,7 +87,7 @@ const ProductCarousel = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
+        className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
       >
         ❯
       </button>
@@ -128,7 +128,7 @@ const ProductCarousel = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
+        className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
       >
         ❯
       </button>
@@ -168,7 +168,7 @@ const ProductCarousel = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
+        className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
       >
         ❯
       </button>
@@ -208,7 +208,7 @@ const ProductCarousel = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
+        className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
       >
         ❯
       </button>
@@ -248,7 +248,7 @@ const ProductCarousel = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
+        className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
       >
         ❯
       </button>

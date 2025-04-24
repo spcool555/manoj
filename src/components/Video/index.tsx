@@ -31,7 +31,7 @@ const Video = () => {
         <div
             className="group w-64 h-96 bg-white dark:bg-[#f9b800] shadow-md relative rounded-lg mx-4 my-7 hover:ring hover:ring-[#f9b800] dark:hover:ring-white transform duration-500 hover:scale-105 hover:shadow-xl">
             <div
-                className="bg-[#f9b800] flex justify-center items-center w-28 h-28 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 border-slate-200 group-hover:border-[#f9b800] dark:border-slate-800 group-hover:bg-white dark:group-hover:bg-[#f9b800] group-hover:shadow-md transform duration-300">
+                className="bg-[#EA6321] flex justify-center items-center w-28 h-28 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 border-slate-200 group-hover:border-[#f9b800] dark:border-slate-800 group-hover:bg-white dark:group-hover:bg-[#f9b800] group-hover:shadow-md transform duration-300">
                 <span className="text-3xl md:text-5xl text-white dark:text-slate-800 group-hover:text-[#f9b800] dark:group-hover:text-white transform duration-300">
                 <img src="https://cdn-icons-png.flaticon.com/128/3135/3135807.png" className="h-14"/>
                 </span>
@@ -51,7 +51,7 @@ const Video = () => {
         <div
             className="group w-64 h-96 bg-white dark:bg-[#f9b800] shadow-md relative rounded-lg  mx-4 my-7 hover:ring hover:ring-[#f9b800] dark:hover:ring-white transform duration-500 hover:scale-105 hover:shadow-xl">
             <div
-                className="bg-[#f9b800] flex justify-center items-center w-28 h-28 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 border-slate-200 group-hover:border-[#f9b800] dark:border-slate-800 group-hover:bg-white dark:group-hover:bg-[#f9b800] group-hover:shadow-md transform duration-300">
+                className="bg-[#EA6321] flex justify-center items-center w-28 h-28 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 border-slate-200 group-hover:border-[#f9b800] dark:border-slate-800 group-hover:bg-white dark:group-hover:bg-[#f9b800] group-hover:shadow-md transform duration-300">
                 <span className="text-3xl md:text-5xl text-white dark:text-slate-800 group-hover:text-[#f9b800] dark:group-hover:text-white transform duration-300">
                 <img src="https://cdn-icons-png.flaticon.com/128/869/869196.png" className="h-14"/>
                 </span>
@@ -70,7 +70,7 @@ const Video = () => {
         <div
             className="group w-64 h-96 bg-white dark:bg-[#f9b800] shadow-md relative rounded-lg  mx-4 my-7 hover:ring hover:ring-[#f9b800] dark:hover:ring-white transform duration-500 hover:scale-105 hover:shadow-xl">
             <div
-                className="bg-[#f9b800] flex justify-center items-center w-28 h-28 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 border-slate-200 group-hover:border-[#f9b800] dark:border-slate-800 group-hover:bg-white dark:group-hover:bg-[#f9b800] group-hover:shadow-md transform duration-300">
+                className="bg-[#EA6321] flex justify-center items-center w-28 h-28 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 border-slate-200 group-hover:border-[#f9b800] dark:border-slate-800 group-hover:bg-white dark:group-hover:bg-[#f9b800] group-hover:shadow-md transform duration-300">
                 <span className="text-3xl md:text-5xl text-white dark:text-slate-800 group-hover:text-[#f9b800] dark:group-hover:text-white transform duration-300">
                     <img src="https://cdn-icons-png.flaticon.com/128/3098/3098491.png" className="h-14"/>
                 </span>

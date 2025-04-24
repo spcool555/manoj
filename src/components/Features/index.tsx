@@ -28,13 +28,11 @@ const Features = () => {
       <section className=" w-full px-8 py-6">
       {/* <!-- Content --> */}
   <div className="relative z-10 container mx-auto px-4 text-center text-black">
-    <h1 className="mb-6 text-xl font-bold tracking-tight sm:text-2xl md:text-6xl lg:text-4xl">
+    <h1 className="mb-6 text-2xl font-bold tracking-tight sm:text-2xl md:text-6xl lg:text-4xl">
     Our Products <span className="relative whitespace-nowrap text-[#EA6321] dark:text-[#EA6321]">        <span className="relative">Range</span>
       </span>
     </h1>
-    <p className="mx-auto mb-6  text-lg">
-    Established in  Nagpur, Maharashtra, we “Manoj Engineering Consultant ” are a Sole Proprietorship firm, engaged as the foremost Manufacturer of Stainless Steel Valve, Homogenizer Spare Parts , etc. Our products are high in demand due to their premium quality and affordable prices. Furthermore, we ensure to timely deliver these products to our clients, through this we have gained a huge clients base in the market. We also provide Milk Homogenizer Repairing Service.
-    </p>
+ 
   </div>
 
   <div className="container text-black">

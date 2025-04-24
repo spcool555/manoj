@@ -41,7 +41,7 @@ export default function Home() {
       {/* <Pricing /> */}
 
       <Contact />
-      <AdminPage />
+    
   
     </>
   );

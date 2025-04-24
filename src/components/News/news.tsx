@@ -7,19 +7,21 @@ export default function NewsPage() {
       <div className="bg-white shadow-lg rounded-lg max-w-8xl w-full grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
 
         {/* Left Side - Image */}
-        <div className="relative w-full h-96 rounded-lg overflow-hidden">
-          <Image
-            src="/images/manoj-slider/manoj.png" // use string path from public/
-            alt="News"
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
+        <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden">
+  <Image
+    src="/images/manoj-slider/manoj.png"
+    alt="News"
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-cover object-center rounded-lg"
+  />
+</div>
+
 
         {/* Right Side - Summary */}
         <div className="flex flex-col justify-between">
           <div>
-            <h1 className="text-3xl font-bold mb-4 text-gray-800">MANOJ ENGINEERING
+            <h1 className="text-[18px] sm:text-3xl font-bold mb-4 text-gray-800">MANOJ ENGINEERING
             CONSULTANT</h1>
             <p className="text-gray-700 mb-4">
             Welcome to Manoj Engineering Consultant your premier destination for all

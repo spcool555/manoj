@@ -13,8 +13,8 @@ const Brands = () => {
     <div className="relative xl:pl-32 lg:flex lg:items-center ">
       <div className="relative">
         <blockquote className="relative" >
-          <div className="text-sm  leading-9 tracking text-gray-100 md:text-xl">
-            <p className=""><span className="font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-yellow via-orange-200 to-red-600">Reaching Millions Of Customers</span>
+          <div className="text-md  leading-9 tracking text-gray-100 md:text-xl">
+            <p className=""><span className="font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-yellow via-orange-200 to-red-600">Reaching Millions Of Customers</span>
             <br/><br/> Our friendly team are on hand to answer any questions you might have contact<br/> +91 8767474066 / 9422801983  or  manojenggngp@gmail.com 
           </p>
 

@@ -244,7 +244,7 @@ const AdminProducts = () => {
               ))}
               {books.length === 0 && (
                 <tr>
-                  <td colSpan="4" className="text-center p-4 text-gray-500">
+                  <td  className="text-center p-4 text-gray-500">
                     No books found.
                   </td>
                 </tr>

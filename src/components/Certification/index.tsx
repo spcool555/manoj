@@ -15,7 +15,7 @@ const Certification = () => {
 
   return (
     <>
-      <div className="relative mt-16 bg-black text-white overflow-hidden">
+      <div className="relative bg-black text-white overflow-hidden">
   <div className="absolute inset-0">
     <img src="/images/manoj-slider/3.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
     <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -26,26 +26,22 @@ const Certification = () => {
   </div>
 </div>
     
-
-      <section className="py-16 md:py-20 lg:py-28">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-3 gap-8 justify-center">
-            {certificates.map((certificate, index) => (
-              // <div key={index} className="col-span-12 sm:col-span-6 md:col-span-4 text-center mx-auto">
-              <div key={index} className="text-center mx-auto">
-                <img
-                  className="img-s mb-4"
-                  src={`./images/certificate/${certificate.img}`}
-                  alt={`Certificate ${index + 1}`}
-                />
-              
-      
-               
-              </div>
-            ))}
-          </div>
+<section className="py-16 md:py-20 lg:py-28">
+  <div className="container mx-auto">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-center">
+      {certificates.map((certificate, index) => (
+        <div key={index} className="text-center mx-auto">
+          <img
+            className="img-s mb-4 w-full"
+            src={`./images/certificate/${certificate.img}`}
+            alt={`Certificate ${index + 1}`}
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
     </>
   );
 };

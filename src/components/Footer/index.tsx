@@ -5,9 +5,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
- <footer className="bg-black text-center text-white dark:bg-black dark:text-neutral-200 lg:text-left" style={{ borderTop: "2px solid #F7BE38" }}>
+ <footer className="bg-black text-center text-white dark:bg-black dark:text-neutral-200 lg:text-left" style={{ borderTop: "2px solid #EA6321" }}>
   {/* Main container div */}
-  <div className="lg:mx-36 py-10 text-center md:text-left">
+  <div className="lg:mx-10 py-10 text-center md:text-left">
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
       {/* TW Elements section */}
       <div>
@@ -53,9 +53,9 @@ const Footer = () => {
       {/* Contact form section */}
       <div>
         <form>
-          <div className="flex items-end mt-14" style={{ position: "relative", right: "10%" }}>
+          <div className="flex items-end p-5 " >
             <div className="flex items-center w-full max-w-md mb-3 seva-fields formkit-fields">
-              <div className="relative w-full mr-3 formkit-field">
+              <div className="relative w-full m-3 formkit-field">
                 <label htmlFor="member_email" className="hidden block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none lg:pt-5">
                   <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +84,7 @@ const Footer = () => {
   </div>
   
   {/* Copyright */}
-  <div className="w-full border-t-2 flex justify-between border-[#F7BE38] py-4 text-center text-sm px-4 bg-[#000000] text-white">
+  <div className="w-full border-t-2 flex justify-between border-[#EA6321] py-4 text-center text-sm px-4 bg-[#000000] text-white">
    <h1> © 2003 Manoj Engineering Consultant</h1>
    <a href="">
 

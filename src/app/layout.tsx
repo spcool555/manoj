@@ -19,14 +19,15 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head />
-      <body>
-        <Providers>
+      <body className="">
+
+    
           <Header />
           {children}
           <WhatsAppWidget />
           <Footer />
           <ScrollToTop />
-        </Providers>
+    
       </body>
     </html>
   );

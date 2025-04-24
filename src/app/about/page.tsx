@@ -1,9 +1,6 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import Breadcrumb from "@/components/Common/Breadcrumb";
 import "./Brands.css";
 import { Metadata } from "next";
-import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "About Page | Free Next.js Template for Startup and SaaS",
@@ -15,7 +12,7 @@ const AboutPage = () => {
   return (
     <>
 
-      <div className="relative mt-16 bg-black text-white overflow-hidden">
+      <div className="relative  bg-black text-white overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/manoj-slider/3.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -26,7 +23,8 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <div className="bg-gray-800">
+    <center>
+    <div className="bg-gray-800">
         <div className=" container items-center grid-cols-2 mx-auto overflow-x-hidden lg:grid md:py-14" data-aos="fade-right" data-aos-duration="800">
           <div className="pr-2 md:mb-1 pt-24 md:py-0">
             <h1 className="font-semibold text-[#EA6321] text-2xl  xl:text-4xl lg:text-3xl">Manoj Engineering Consultant</h1>
@@ -41,6 +39,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+    </center>
       <div
         className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 py-20 bg-gradient-to-r from-green-50/50 via-teal-50 to-green-50/50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800">
         <h1
@@ -97,7 +96,8 @@ const AboutPage = () => {
       </div>
 
 
-      <div className="extra bg-white dark:bg-gray-800 p-6 md:p-10 rounded-lg shadow-lg w-full max-w-6xl mx-auto mt-12">
+    <center>
+    <div className="extra bg-white dark:bg-gray-800 p-6 md:p-10 rounded-lg shadow-lg w-full max-w-6xl mx-auto mt-12">
         <h2 className="text-2xl font-semibold text-[#EA6321] mb-6 text-center">Business Information</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800 dark:text-gray-200">
@@ -125,10 +125,10 @@ const AboutPage = () => {
             <p className="font-semibold">GST Number:</p>
             <p>27AFDPR1538J1Z9</p>
           </div>
-          <div className="md:col-span-2">
+          {/* <div className="md:col-span-2">
             <p className="font-semibold">HSN Code:</p>
             <p>68125000</p>
-          </div>
+          </div> */}
           {/* <div className="md:col-span-2">
       <p className="font-semibold">HSN Description:</p>
       <p>
@@ -139,6 +139,7 @@ const AboutPage = () => {
     </div> */}
         </div>
       </div>
+    </center>
 
 
 

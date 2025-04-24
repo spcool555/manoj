@@ -186,57 +186,43 @@ const Header = () => {
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
-                              <div
-                                className={`grid ${
-                                  menuItem.title === "Services"
-                                    ? "lg:grid-cols-4"
-                                    : "lg:grid-cols-4"
-                                } gap-4 p-4`}
-                                // }`}
-                              >
-                                {menuItem.submenu &&
-                                  menuItem.submenu.map(
-                                    (submenuCategory, subIndex) => (
-                                      <div key={subIndex}>
-                                      
-                                        <h4 className=" font-semibold text-dark dark:text-white">
-                                          {submenuCategory.title}
-                                        </h4>
-                                        <ul>
-                                          {submenuCategory.links.map(
-                                            (submenuItem, linkIndex) => (
-                                              <li key={linkIndex}>
-                                                {menuItem.title ===
-                                                  "Services" && (
-                                                  <div className="para">
-                                                    <img
-                                                      src={submenuCategory.img}
-                                                      alt={
-                                                        submenuCategory.title
-                                                      }
-                                                    />
-                                                    {/* <h4 className=" font-semibold text-dark dark:text-white">
-                                          {submenuCategory.title}
-                                        </h4> */}
-                                                    {submenuCategory.desc}
-                                                  </div>
-                                                )}
-                                                <Link
-                                                  href={submenuItem.path}
-                                                  // className="block py-2 text-sm text-dark hover:text-blue-600 dark:text-white/70 dark:hover:text-white"
-                                                  className="block lg:py-0.5 text-[#142561] hover:text-red-600 dark:text-white/70 dark:hover:text-white"
-                                                >
-                                                  {submenuItem.title}
-                                                </Link>
-                                            </li>
-                                            ),
-                                          )}
-                                        </ul>
-                                    
-                                      </div>
-                                    ),
-                                  )}
-                              </div>
+                     <div
+  className={`grid gap-6 p-4 sm:grid-cols-2 lg:grid-cols-4`}
+>
+  {menuItem.submenu &&
+    menuItem.submenu.map((submenuCategory, subIndex) => (
+      <div key={subIndex}>
+        <h4 className="mb-2 text-sm font-semibold text-gray-800 dark:text-white lg:text-base">
+          {submenuCategory.title}
+        </h4>
+        <ul className="space-y-2">
+          {submenuCategory.links.map((submenuItem, linkIndex) => (
+            <li key={linkIndex}>
+              {menuItem.title === "Services" && (
+                <div className="mb-2 text-sm text-gray-600 dark:text-gray-300">
+                  <img
+                    src={submenuCategory.img}
+                    alt={submenuCategory.title}
+                    className="mb-2 h-24 w-full max-w-[150px] rounded object-cover"
+                  />
+                  <p className="text-xs sm:text-sm lg:text-sm leading-snug">
+                    {submenuCategory.desc}
+                  </p>
+                </div>
+              )}
+              <Link
+                href={submenuItem.path}
+                className="block text-sm text-[#142561] hover:text-red-600 dark:text-white/80 dark:hover:text-white lg:text-base"
+              >
+                {submenuItem.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+</div>
+
                             </div>
                           </>
                         )}
