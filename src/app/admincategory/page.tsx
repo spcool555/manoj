@@ -1,11 +1,13 @@
 'use client'
+import AdminSide from "../adminside/page";
 import "./Brands.css";
-
+import { ApiUrl } from "@/components/Api/apiurl";
 import { useState } from "react";
 
 
 
 const AdminCategory = () => {
+  const [loading, setLoading] = useState(false);
   const [maincatname, setMaincatname] = useState("");
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -14,9 +16,9 @@ const AdminCategory = () => {
       alert("Category name is required!");
       return;
     }
-
+    setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/public/saveCategories`, {
+      const response = await fetch(`${ApiUrl}/public/saveCategories`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ maincatname }),
@@ -43,20 +45,15 @@ const AdminCategory = () => {
     } catch (error) {
       console.error("Error adding category:", error);
       alert("An unexpected error occurred. Please try again later.");
+    }finally {
+      setLoading(false); // Stop loader
     }
   };
 
   return (
     <div className="flex min-h-screen bg-gray-100 mt-16">
       {/* Sidebar Placeholder (You can replace with your actual component) */}
-      <aside className="w-64 bg-white shadow-md p-4 hidden md:block">
-        <h2 className="text-xl font-semibold mb-6">Admin Panel</h2>
-        <nav className="space-y-3">
-          <a href="#" className="block text-gray-700 hover:text-blue-600">Dashboard</a>
-          <a href="#" className="block text-gray-700 hover:text-blue-600">Categories</a>
-          <a href="#" className="block text-gray-700 hover:text-blue-600">Logout</a>
-        </nav>
-      </aside>
+      <AdminSide/>
 
       {/* Main Content */}
       <main className="flex-1 p-6">
@@ -89,10 +86,20 @@ const AdminCategory = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition"
+              disabled={loading}
+              className={`w-full flex justify-center items-center bg-teal-600 text-white py-2 px-4 rounded transition ${
+                loading ? "opacity-60 cursor-not-allowed" : "hover:bg-teal-700"
+              }`}
             >
-              Add Category
+              {loading ? (
+                <svg className="animate-spin h-5 w-5 text-white mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                </svg>
+              ) : null}
+              {loading ? "Adding..." : "Add Category"}
             </button>
+
           </form>
         </div>
       </main>

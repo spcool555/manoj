@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { ApiUrl } from '@/components/Api/apiurl';
 
 const Products = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const Products = () => {
   useEffect(() => {
     if (category) {
       axios
-        .get(`http://localhost:8000/public/allbooks?maincatname=${category}`)
+        .get(`${ApiUrl}/public/allbooks?maincatname=${category}`)
         .then((res) => setProducts(res.data))
         .catch((error) => console.error('Error fetching books:', error));
     }

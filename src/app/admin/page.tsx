@@ -2,22 +2,14 @@
 import "./Brands.css";
 import { Metadata } from "next";
 import Link from "next/link";
+import AdminSide from "../adminside/page";
 
 
 const AdminPage = () => {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md hidden md:block">
-        <div className="p-6 text-xl font-semibold border-b">Admin Panel</div>
-        <nav className="p-4 space-y-2">
-          <Link href="" className="block text-gray-700 hover:text-green-600">Dashboard</Link>
-          <a href="#" className="block text-gray-700 hover:text-green-600">Enquiries</a>
-          <Link href="admincategory" className="block text-gray-700 hover:text-green-600">Category</Link>
-          <Link href="adminproduct" className="block text-gray-700 hover:text-green-600">Products</Link>
-          <a href="#" className="block text-gray-700 hover:text-green-600">Logout</a>
-        </nav>
-      </aside>
+     <AdminSide/>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">

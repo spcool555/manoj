@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import Link from "next/link";
 import './singleProduct.css';
 import axios from 'axios';
+import { ApiUrl } from '@/components/Api/apiurl';
 
 const SingleProduct = () => {
   const searchParams = useSearchParams();
@@ -23,7 +24,7 @@ const SingleProduct = () => {
   useEffect(() => {
     if (!productId) return;
 
-    axios.get(`http://localhost:8000/public/singleBook?bid=${productId}`)
+    axios.get(`${ApiUrl}/public/singleBook?bid=${productId}`)
       .then((res) => {
         setProduct(res.data); // assuming res.data is the product object
       })
@@ -97,7 +98,7 @@ const sendEnquiry = () => {
 
   setLoading(true); // Start loader
 
-  axios.post('http://localhost:8000/public/send-enquiry', {
+  axios.post(`${ApiUrl}/public/send-enquiry`, {
     productId: product.id,
     productName: product.booktitle,
     mobileNumber,
