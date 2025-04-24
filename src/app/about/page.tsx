@@ -34,7 +34,7 @@ const AboutPage = () => {
           </div>
 
           <div className="pb-10 overflow-hidden md:p-10 lg:p-0 sm:pb-0">
-            <img id="" className="transition-all duration-300 ease-in-out hover:scale-105 lg:w-[400px] sm:mx-auto sm:w-4/6 sm:pb-12 lg:pb-0" src="./images/manoj-infra/image4.png"
+            <img id="" className="transition-all duration-300 ease-in-out hover:scale-105 lg:w-[400px] sm:mx-auto sm:w-4/6 sm:pb-12 lg:pb-0" src="/images/manoj-infra/image4.png"
               alt="about image" width="300" height="auto" />
           </div>
         </div>
