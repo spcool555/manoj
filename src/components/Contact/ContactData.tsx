@@ -16,7 +16,7 @@ const NewsLatterBox3 = () => {
         <p>
         A-1,Near, Electronic Zone Hingna, Road Near,Petrol, Pump M.I.D.C., Lokmanya Nagar, Nagpur-440016, Maharashtra, India
         </p>{" "}
-        <a href="#">manojenggngp@gmail.com </a>
+        <a href="#"> mec@mechomogenizer.com </a>
         <a href="#">+91 8767474066</a>
         <br />
       
