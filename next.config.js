@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "mechomogenizer.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -13,3 +13,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
