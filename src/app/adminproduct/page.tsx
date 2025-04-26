@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import AdminSide from '../adminside/page';
 import { ApiUrl } from '@/components/Api/apiurl';
 import Swal from 'sweetalert2';
-
+import ReactPaginate from 'react-paginate';
 const AdminProducts = () => {
 
   const [loading, setLoading] = useState(false);
@@ -14,6 +14,10 @@ const AdminProducts = () => {
     author: '',
     description: '',
     maincatname: '', // 🆕 added
+    format: '', // 🆕 added
+    pagess: '', // 🆕 added
+    publisher: '', // 🆕 added
+    language: '', // 🆕 added
   });
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -43,6 +47,10 @@ const AdminProducts = () => {
     payload.append('booktitle', formData.booktitle);
     payload.append('author', formData.author);
     payload.append('description', formData.description);
+    payload.append('format', formData.format);
+    payload.append('pagess', formData.pagess);
+    payload.append('publisher', formData.publisher);
+    payload.append('language', formData.language);
     payload.append('maincatname', formData.maincatname);
     if (imageFile) {
       payload.append('imageFile', imageFile);
@@ -91,9 +99,13 @@ const AdminProducts = () => {
   const fetchBooks = () => {
     fetch(`${ApiUrl}/public/allbooks`)
       .then((res) => res.json())
-      .then((data) => setBooks(data))
+      .then((data) => {
+        const reversedBooks = data.reverse(); // Reverse the array
+        setBooks(reversedBooks);
+      })
       .catch((err) => console.error('Error fetching books:', err));
   };
+  
   const fetchCategories = () => {
     fetch(`${ApiUrl}/public/allCategories`)
       .then((res) => res.json())
@@ -106,6 +118,10 @@ const AdminProducts = () => {
       author: '',
       description: '',
       maincatname: '',
+      format: '',
+      pagess: '',
+      publisher: '',
+      language: '',
     });
     setImageFile(null);
     setImagePreview(null);
@@ -128,7 +144,11 @@ const AdminProducts = () => {
     if (bookToEdit) {
       setFormData({
         booktitle: bookToEdit.booktitle,
+        format: bookToEdit.format,
         author: bookToEdit.author,
+        pagess: bookToEdit.pagess,
+        publisher: bookToEdit.publisher,
+        language: bookToEdit.language,
         description: bookToEdit.description,
         maincatname: bookToEdit.maincatname?.toString() || '',
       });
@@ -183,7 +203,19 @@ const AdminProducts = () => {
       }
     }
   };
-  
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 3; // Adjust the number of items per page
+
+  const handlePageClick = (data) => {
+    setCurrentPage(data.selected);
+  };
+
+  // Slice the books array to show only the items for the current page
+  const booksToDisplay = books.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
   return (
     <div className="flex min-h-screen bg-gray-100 mt-16">
       {/* Sidebar Placeholder (You can replace with your actual component) */}
@@ -210,15 +242,15 @@ const AdminProducts = () => {
               name="booktitle"
               value={formData.booktitle}
               onChange={handleChange}
-              placeholder="Book Title"
-              className="w-full p-2 border rounded-md"
+              placeholder="Product Name"
+              className="w-64 p-2 border rounded-md"
               required
             />
             <select
               name="maincatname"
               value={formData.maincatname}
               onChange={handleChange}
-              className="w-full p-2 border rounded-md"
+              className="w-64 p-2 border rounded-md"
               required
             >
               <option value="">Select Category</option>
@@ -234,9 +266,46 @@ const AdminProducts = () => {
               name="author"
               value={formData.author}
               onChange={handleChange}
-              placeholder="Author"
-              className="w-full p-2 border rounded-md"
-              required
+              placeholder="Usage/Application"
+              className="w-64 p-2 border rounded-md"
+              
+            />
+
+            <input
+              type="text"
+              name="format"
+              value={formData.format}
+              onChange={handleChange}
+              placeholder="Pressure"
+              className="w-64 p-2 border rounded-md"
+              
+            />
+            <input
+              type="text"
+              name="pagess"
+              value={formData.pagess}
+              onChange={handleChange}
+              placeholder="Material"
+              className="w-64 p-2 border rounded-md"
+              
+            />
+            <input
+              type="text"
+              name="publisher"
+              value={formData.publisher}
+              onChange={handleChange}
+              placeholder="Set Contain"
+              className="w-64 p-2 border rounded-md"
+              
+            />
+            <input
+              type="text"
+              name="language"
+              value={formData.language}
+              onChange={handleChange}
+              placeholder="Grade"
+              className="w-64 p-2 border rounded-md"
+              
             />
             <textarea
               name="description"
@@ -245,14 +314,14 @@ const AdminProducts = () => {
               placeholder="Description"
               rows={4}
               className="w-full p-2 border rounded-md"
-              required
+              
             />
             <input
               type="file"
               accept="image/*"
               ref={fileInputRef}
               onChange={handleFileChange}
-              className="w-full p-2 border rounded-md"
+              className="w-64 p-2 border rounded-md"
             />
 
             {imagePreview && (
@@ -290,53 +359,75 @@ const AdminProducts = () => {
           </form>
     
 
-        <div className="max-w-6xl mx-auto mt-10 p-4">
-          <h2 className="text-2xl font-bold mb-4">Products List</h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border rounded shadow">
-              <thead>
-                <tr className="bg-gray-100 text-left">
-                  <th className="p-2 border">Title</th>
-                  <th className="p-2 border">Author</th>
-                  <th className="p-2 border">Category</th> {/* 🆕 */}
-                  <th className="p-2 border">Description</th>
-                  <th className="p-2 border">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {books.map((book) => (
-                  <tr key={book.id} className="border-t hover:bg-gray-50">
-                    <td className="p-2 border">{book.booktitle}</td>
-                    <td className="p-2 border">{book.author}</td>
-                    <td className="p-2 border">{book.maincatname || 'N/A'}</td> {/* 🆕 */}
-                    <td className="p-2 border">{book.description}</td>
-                    <td className="p-2 border space-x-2">
-                      <button
-                        onClick={() => handleEdit(book.id)}
-                        className="bg-blue-500 ml-4 text-white px-3 py-1 rounded hover:bg-yellow-600"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => handleDelete(book.id)}
-                        className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-                {books.length === 0 && (
-                  <tr>
-                    <td className="text-center p-4 text-gray-500">
-                      No books found.
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
+          <div className="max-w-6xl mx-auto mt-10 p-4">
+      <h2 className="text-2xl font-bold mb-4">Products List</h2>
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border rounded shadow">
+          <thead>
+            <tr className="bg-gray-100 text-left">
+              <th className="p-2 border">Title</th>
+              <th className="p-2 border">Category</th>
+              <th className="p-2 border">Usage</th>
+              <th className="p-2 border">Pressure</th>
+              <th className="p-2 border">Material</th>
+              <th className="p-2 border">Set Containt</th>
+              <th className="p-2 border">Grade</th>
+              <th className="p-2 border">Description</th>
+              <th className="p-2 border">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {booksToDisplay.map((book) => (
+              <tr key={book.id} className="border-t hover:bg-gray-50">
+                <td className="p-2 border">{book.booktitle}</td>
+                <td className="p-2 border">{book.maincatname || 'N/A'}</td>
+                <td className="p-2 border">{book.author || 'N/A'}</td>
+                <td className="p-2 border">{book.format || 'N/A'}</td>
+                <td className="p-2 border">{book.pagess || 'N/A'}</td>
+                <td className="p-2 border">{book.publisher || 'N/A'}</td>
+                <td className="p-2 border">{book.language || 'N/A'}</td>
+                <td className="p-2 border">{book.description || 'N/A'}</td>
+                <td className="p-2 border space-x-2">
+                  <button
+                    onClick={() => handleEdit(book.id)}
+                    className="bg-blue-500 ml-4 text-white px-3 py-1 rounded hover:bg-yellow-600"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(book.id)}
+                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+            {books.length === 0 && (
+              <tr>
+                <td className="text-center p-4 text-gray-500">
+                  No books found.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+      
+      {/* Pagination */}
+      <div className="mt-4 flex justify-center">
+        <ReactPaginate
+          previousLabel={"Previous"}
+          nextLabel={"Next"}
+          pageCount={Math.ceil(books.length / itemsPerPage)}
+          onPageChange={handlePageClick}
+          containerClassName={"flex space-x-2"}
+          pageClassName={"bg-gray-200 text-gray-700 px-4 py-2 rounded"}
+          activeClassName={"bg-blue-500 text-white"}
+          disabledClassName={"opacity-50"}
+        />
+      </div>
+    </div>
 
 
 
