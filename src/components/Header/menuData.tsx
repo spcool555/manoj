@@ -9,13 +9,13 @@ const menuData = [
       {
        
         links: [
-          { title: "Homogenizer Spare Parts", path: "/products?category=HomogenizerSpareParts" },
-  { title: "Homogenizer Machine", path: "/products?category=HomogenizerMachine" },
-  { title: "Homogenizer Valve", path: "/products?category=HomogenizerValve" },
-  { title: "Homogeniser goma galine tetrapack gea Bartoli etc", path: "/products?category=HomogenisergomagalinetetrapackgeaBartolietc" },
+          { title: "Homogenizer Spare Parts", path: "/products?category=Homogenizer Spare Parts" },
+  { title: "Homogenizer Machine", path: "/products?category=Homogenizer Machine" },
+  { title: "Homogenizer Valve", path: "/products?category=Homogenizer Valve" },
+  { title: "Homogeniser goma galine tetrapack gea Bartoli etc", path: "/products?category=Homogeniser goma galine tetrapack gea Bartoli etc" },
   { title: "Homogeniser", path: "/products?category=Homogeniser" },
-  { title: "Milk homogeniser", path: "/products?category=Milkhomogeniser" },
-  { title: "Pressure Gauge", path: "/products?category=PressureGauge" }
+  { title: "Milk homogeniser", path: "/products?category=Milk homogeniser" },
+  { title: "Pressure Gauge", path: "/products?category=Pressure Gauge" }
         
         ],
       },
@@ -23,13 +23,13 @@ const menuData = [
       {
       
         links: [
-          { title: "High Pressure Homogenizer", path: "/products?category=HighPressureHomogenizer" },
-  { title: "Homogenizer Machine And Spare Parts", path: "/products?category=HomogenizerMachineAndSpareParts" },
-  { title: "Fiber Optic Sensors", path: "/products?category=FiberOpticSensors" },
-  { title: "Homogeniser valve", path: "/products?category=Homogeniservalve" },
-  { title: "Ice Cream Homogenizer", path: "/products?category=IceCreamHomogenizer" },
-  { title: "Piston seal or plunger seal", path: "/products?category=Pistonsealorplungerseal" },
-  { title: "Swimming Pool Motor With Strainer", path: "/products?category=SwimmingPoolMotorWithStrainer" }
+          { title: "High Pressure Homogenizer", path: "/products?category=High Pressure Homogenizer" },
+  { title: "Homogenizer Machine And Spare Parts", path: "/products?category=Homogenizer Machine And Spare Parts" },
+  { title: "Fiber Optic Sensors", path: "/products?category=Fiber Optic Sensors" },
+  { title: "Homogeniser valve", path: "/products?category=Homogeniser valve" },
+  { title: "Ice Cream Homogenizer", path: "/products?category=Ice Cream Homogenizer" },
+  { title: "Piston seal or plunger seal", path: "/products?category=Piston seal or plunger seal" },
+  { title: "Swimming Pool Motor With Strainer", path: "/products?category=Swimming Pool Motor With Strainer" }
         
         ],
       },
@@ -37,13 +37,13 @@ const menuData = [
       {
     
         links: [
-          { title: "Homogeniser part", path: "/products?category=Homogeniserpart" },
-          { title: "Mild Steel Spring", path: "/products?category=MildSteelSpring" },
-          { title: "Homogenizer Plunger", path: "/products?category=HomogenizerPlunger" },
+          { title: "Homogeniser part", path: "/products?category=Homogeniser part" },
+          { title: "Mild Steel Spring", path: "/products?category=Mild Steel Spring" },
+          { title: "Homogenizer Plunger", path: "/products?category=Homogenizer Plunger" },
           { title: "Gaskets", path: "/products?category=Gaskets" },
           { title: "Seals", path: "/products?category=Seals" },
-          { title: "Industrial Valve", path: "/products?category=IndustrialValve" },
-          { title: "Hplc System And Accessories", path: "/products?category=HplcSystemAndAccessories" }
+          { title: "Industrial Valve", path: "/products?category=Industrial Valve" },
+          { title: "Hplc System And Accessories", path: "/products?category=Hplc System And Accessories" }
         
         
         ],
@@ -54,14 +54,14 @@ const menuData = [
       {
        
         links: [
-          { title: "Copier Paper", path: "/products?category=CopierPaper" },
-          { title: "Polycarbonate Seal", path: "/products?category=PolycarbonateSeal" },
-          { title: "Oil Seal", path: "/products?category=OilSeal" },
-          { title: "Industrial Chemicals", path: "/products?category=IndustrialChemicals" },
-          { title: "Fiber Sensor", path: "/products?category=FiberSensor" },
-          { title: "Metal Piston", path: "/products?category=MetalPiston" },
-          { title: "Rubber Oil Seal", path: "/products?category=RubberOilSeal" },
-          { title: "New Items", path: "/products?category=NewItems" }
+          { title: "Copier Paper", path: "/products?category=Copier Paper" },
+          { title: "Polycarbonate Seal", path: "/products?category=Polycarbonate Seal" },
+          { title: "Oil Seal", path: "/products?category=Oil Seal" },
+          { title: "Industrial Chemicals", path: "/products?category=Industrial Chemicals" },
+          { title: "Fiber Sensor", path: "/products?category=Fiber Sensor" },
+          { title: "Metal Piston", path: "/products?category=Metal Piston" },
+          { title: "Rubber Oil Seal", path: "/products?category=Rubber Oil Seal" },
+          { title: "New Items", path: "/products?category=New Items" }
                 ],
       },
 
