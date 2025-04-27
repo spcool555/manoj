@@ -23,14 +23,14 @@ const Footer = () => {
       <div >
         <h6 className="mb-4 font-semibold uppercase">Quick Links</h6>
         <p className="mb-4">
-          <a className="text-white hover:text-[#FAA605]" href="/">Home</a>
+          <Link className="text-white hover:text-[#FAA605]" href="/">Home</Link>
         </p>
         <p className="mb-4">
-          <a className="text-white hover:text-[#FAA605]" href="/about">About</a>
+          <Link className="text-white hover:text-[#FAA605]" href="products">All Products</Link>
         </p>
       
         <p className="mb-4">
-          <a className="text-white hover:text-[#FAA605]" href="/certification">Certification</a>
+          <Link className="text-white hover:text-[#FAA605]" href="certification">Certification</Link>
         </p>      
       </div>
       
@@ -39,14 +39,17 @@ const Footer = () => {
         <h6 className="mb-4 font-semibold uppercase">Useful Links</h6>
      
         <p className="mb-4">
-          <Link href="/contact" className="text-white hover:text-[#fff350]">Contact Us</Link>
+          <Link href="contact" className="text-white hover:text-[#fff350]">Contact Us</Link>
         </p>
    
-        <p>
-          <Link href="/about" className="text-white hover:text-[#fff350]">Enquiry</Link>
+        <p className="mb-4">
+          <Link href="about" className="text-white hover:text-[#fff350]">About Us</Link>
         </p>
         <p>
-          <Link href="/admin" className="text-white hover:text-[#fff350]">Admin</Link>
+          <Link href="https://www.indiamart.com/manoj-engineering-consultant/" target="_blank" className="text-white hover:text-[#fff350]">India Mart Link</Link>
+        </p>
+        <p hidden>
+          <Link href="admin" className="text-white hover:text-[#fff350]">Admin</Link>
         </p>
       </div>
 

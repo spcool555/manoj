@@ -4,6 +4,7 @@ import SectionTitle from "../Common/SectionTitle";
 import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
 import './feature.css'
+import Link from "next/link";
 
 const Features = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,9 +52,9 @@ const Features = () => {
 
           <div className="btn mt-10">
             <center>
-                <button className="bg-[#1e3690] text-white px-6 py-3 rounded-lg animate-pulse hover:animate-none shadow-lg hover:shadow-[#F9A605]/50 transition duration-300">
+                <Link href="/products" className="bg-[#1e3690] text-white px-6 py-3 rounded-lg animate-pulse hover:animate-none shadow-lg hover:shadow-[#F9A605]/50 transition duration-300">
                 View All Products
-                </button>
+                </Link>
 
             </center>
           </div>

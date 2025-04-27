@@ -1,37 +1,37 @@
-'use client'; // Ensure the page is client-side rendered
+'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import axios from 'axios';
 import { ApiUrl } from '@/components/Api/apiurl';
 
 const Products = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState(null);
-  const [loading, setLoading] = useState(true); // New state to track loading
+  const [loading, setLoading] = useState(true);
+
+  const category = searchParams.get('category');
+
+  // Fetch products based on category
+  const fetchProducts = async (selectedCategory) => {
+    setLoading(true);
+    try {
+      const endpoint = selectedCategory
+        ? `${ApiUrl}/public/allbooks?maincatname=${selectedCategory}`
+        : `${ApiUrl}/public/allbooks`;
+
+      const response = await axios.get(endpoint);
+      setProducts(response.data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    // Only access search params on the client side
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      setCategory(urlParams.get('category'));
-    }
-  }, []);
-
-  useEffect(() => {
-    if (category) {
-      axios
-        .get(`${ApiUrl}/public/allbooks?maincatname=${category}`)
-        .then((res) => {
-          setProducts(res.data);
-          setLoading(false); // Stop loading once data is fetched
-        })
-        .catch((error) => {
-          console.error('Error fetching books:', error);
-          setLoading(false); // Stop loading on error as well
-        });
-    }
+    fetchProducts(category);
   }, [category]);
 
   const handleProductClick = (productId) => {
@@ -41,36 +41,42 @@ const Products = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center w-full h-screen">
-        <div className="w-16 h-16 border-4 border-t-4 border-blue-500 rounded-full animate-spin"></div> {/* Spinner */}
+        <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 mt-16 md:grid-cols-4 gap-6 p-4">
-      {products?.map((product) => (
-        <div
-          onClick={() => handleProductClick(product.id)}
-          key={product.id}
-          className="cursor-pointer w-[310px] h-[430px] mx-auto mt-10 relative flex flex-col bg-white rounded-lg shadow-[0px_0px_12px_0px_rgba(32,181,38,0.32)] border border-black hover:scale-105 transform transition-transform duration-300 ease-in-out"
-        >
-          {/* Image box */}
-          <div className="w-full h-[300px] bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-lg">
-            <img
-              src={product?.imagePath}
-              alt={product?.booktitle}
-              className="w-full h-full object-cover"
-            />
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 mt-20">
+      {products.length > 0 ? (
+        products.map((product) => (
+          <div
+            key={product.id}
+            onClick={() => handleProductClick(product.id)}
+            className="cursor-pointer w-[310px] h-[430px] mx-auto bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-200"
+          >
+            {/* Image */}
+            <div className="w-full h-[300px] bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-lg">
+              <img
+                src={product?.imagePath}
+                alt={product?.booktitle}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Title */}
+            <div className="p-4 flex justify-center items-center h-[130px]">
+              <h3 className="text-black text-center text-lg font-semibold leading-snug">
+                {product?.booktitle}
+              </h3>
+            </div>
           </div>
-  
-          {/* Text */}
-          <div className="flex-1 flex items-center justify-center p-4">
-            <h3 className="text-black text-center text-lg font-medium font-['Poppins'] leading-[21px]">
-              {product?.booktitle}
-            </h3>
-          </div>
+        ))
+      ) : (
+        <div className="col-span-full text-center text-gray-500 mt-10">
+          No products found.
         </div>
-      ))}
+      )}
     </div>
   );
 };
