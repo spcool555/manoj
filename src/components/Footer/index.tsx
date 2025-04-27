@@ -89,10 +89,10 @@ const Footer = () => {
   {/* Copyright */}
   <div className="w-full border-t-2 flex justify-between border-[#EA6321] py-4 text-center text-sm px-4 bg-[#000000] text-white">
    <h1> © 2003 Manoj Engineering Consultant</h1>
-   <a href="">
+   <Link target="_blank" href="https://www.linkedin.com/in/shubham-kohad-98851a261/">
 
    <h1> Designed & Developed By : Shubham Kohad</h1>
-   </a>
+   </Link>
   </div>
 </footer>
 
