@@ -146,7 +146,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <section className="privacy-header bg-dark text-white py-14 mt-20">
+      <section className="privacy-header bg-dark text-white py-14 mt-16">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold">Products</h1>
           <p className="text-lg md:text-xl mt-4">{product.booktitle}</p>

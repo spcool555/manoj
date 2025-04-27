@@ -2,6 +2,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { ApiUrl } from '../Api/apiurl';
+import Link from 'next/link';
 
 const ProductCarousel = () => {
   const [slider1, setSlider1] = useState([]);
@@ -114,12 +115,17 @@ const ProductCarousel = () => {
         >
           {slider1.map(product => (
             <div key={product.id} className="flex-shrink-0 p-2" style={{ width: `${100 / visibleCount}%` }}>
+            <Link href={`/singleProduct?bid=${product.id}`}>
               <div className="bg-white shadow-md rounded-lg overflow-hidden w-full">
                 <img src={product.imagePath} alt={product.booktitle} className="w-full h-40 object-cover" />
                 <div className="p-2 text-center">
                   <h2 className="text-sm font-semibold">{product.booktitle}</h2>
                 </div>
+                
+               
+             
               </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -144,10 +150,13 @@ const ProductCarousel = () => {
           {slider2.map(product => (
             <div key={product.id} className="flex-shrink-0 p-2" style={{ width: `${100 / visibleCount}%` }}>
               <div className="bg-white shadow-md rounded-lg overflow-hidden w-full">
+              <Link href={`/singleProduct?bid=${product.id}`}>
                 <img src={product.imagePath} alt={product.booktitle} className="w-full h-40 object-cover" />
                 <div className="p-2 text-center">
                   <h2 className="text-sm font-semibold">{product.booktitle}</h2>
                 </div>
+              
+                </Link>
               </div>
             </div>
           ))}
