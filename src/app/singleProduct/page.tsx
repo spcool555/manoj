@@ -156,31 +156,32 @@ const SingleProduct = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 px-10 py-16">
         {/* Image Section */}
         <div className="mx-auto">
-          <div
-            className="relative w-[500px] h-[500px] overflow-hidden border border-gray-300 rounded-lg"
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-            onMouseMove={handleMouseMove}
-          >
-            <img
-              ref={imageRef}
-              src={product.imagePath}
-              alt={product.booktitle}
-              className="w-full h-full object-cover rounded-lg"
-            />
-            {hover && (
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  backgroundImage: `url(${product.imagePath})`,
-                  backgroundSize: "200%",
-                  backgroundPosition: `${position.x}% ${position.y}%`,
-                  transition: "background-position 0.1s"
-                }}
-              />
-            )}
-          </div>
-        </div>
+  <div
+    className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden border border-gray-300 rounded-lg"
+    onMouseEnter={() => setHover(true)}
+    onMouseLeave={() => setHover(false)}
+    onMouseMove={handleMouseMove}
+  >
+    <img
+      ref={imageRef}
+      src={product.imagePath}
+      alt={product.booktitle}
+      className="w-full h-full object-contain sm:h-[300px] md:h-[500px]"
+    />
+    {hover && (
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url(${product.imagePath})`,
+          backgroundSize: "200%",
+          backgroundPosition: `${position.x}% ${position.y}%`,
+          transition: "background-position 0.1s"
+        }}
+      />
+    )}
+  </div>
+</div>
+
 
         {/* Description Section */}
         <div>
