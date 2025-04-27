@@ -1,9 +1,50 @@
 "use client";
 
+import axios from "axios";
 import { useTheme } from "next-themes";
+import { useState } from "react";
+import { ApiUrl } from "../Api/apiurl";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
+  const [formData, setFormData] = useState({
+    mobile: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
+
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      const response = await axios.post(`${ApiUrl}/public/sendenquiry`, formData); // Replace with your API endpoint
+      if (response.status === 200) {
+        setSuccess(true); // Show success message
+
+        // Clear the form data after successful submission
+        setFormData({
+          mobile: '',
+        });
+      }
+    } catch (error) {
+      setError('Failed to subscribe to the newsletter. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (<>
    
@@ -13,20 +54,30 @@ const NewsLatterBox = () => {
       </h3>
 
       <div>
+      {/* Form */}
+      <form onSubmit={handleSubmit}>
         <input
+        required
           type="text"
-          name="name"
-          placeholder="Enter  Contact No."
+          name="mobile"
+          placeholder="Enter Contact No."
+          value={formData.mobile}
+          onChange={handleChange}
           className="border-stroke mb-4 w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
         />
-     
+      
         <input
           type="submit"
           value="Send"
           className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
         />
-     
-      </div>
+      </form>
+
+      {/* Loading, Success, Error Messages */}
+      {loading && <p>Sending...</p>}
+      {success && <p>Successfully subscribed!</p>}
+      {error && <p>{error}</p>}
+    </div>
 
       <div>
         <span className="absolute left-2 top-7">

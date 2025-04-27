@@ -1,19 +1,44 @@
 'use client';
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-
-const products = [
-  { id: 1, name: "Product 1", image: "https://5.imimg.com/data5/ANDROID/Default/2022/9/DB/EE/HK/113353167/product-jpeg-250x250.jpg" },
-  { id: 2, name: "Product 2", image: "https://5.imimg.com/data5/ANDROID/Default/2022/9/LM/WK/IV/113353167/product-jpeg-250x250.jpg" },
-  { id: 3, name: "Product 3", image: "https://5.imimg.com/data5/SELLER/Default/2023/10/352031666/DZ/ZC/RD/113353167/safeimagekit-resized-img-2023-10-12t115333-131-250x250.png" },
-  { id: 4, name: "Product 4", image: "https://5.imimg.com/data5/ANDROID/Default/2024/10/458063651/AZ/EG/RI/113353167/product-jpeg-250x250.jpg" },
-  { id: 5, name: "Product 5", image: "https://5.imimg.com/data5/SELLER/Default/2023/10/352306180/GQ/HU/NC/113353167/safeimagekit-resized-img-2023-10-13t094957-036-250x250.png" },
-  { id: 6, name: "Product 6", image: "https://via.placeholder.com/250" },
-  { id: 7, name: "Product 7", image: "https://via.placeholder.com/250" },
-];
+import { ApiUrl } from '../Api/apiurl';
 
 const ProductCarousel = () => {
+  const[products,setProducts]=useState([]);
+  const[slider1,setSlider1]=useState([]);
+  const[slider2,setSlider2]=useState([]);
+  const[slider3,setSlider3]=useState([]);
+  const[slider4,setSlider4]=useState([]);
+  const[slider5,setSlider5]=useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(5);
+
+
+useEffect(()=>{
+
+  axios.get(`${ApiUrl}/public/allbooks`)
+  .then((res)=>{
+    const data = res.data;
+
+    const filteredProducts = data.filter(product => product.maincatname === 'Homogenizer Spare Parts');
+    const filteredProducts2 = data.filter(product => product.maincatname === 'Homogenizer Valve');
+    const filteredProducts3 = data.filter(product => product.maincatname === 'Pressure Gauge');
+    const filteredProducts4 = data.filter(product => product.maincatname === 'Homogeniser goma galine tetrapack gea Bartoli etc');
+    const filteredProducts5 = data.filter(product => product.maincatname === 'Homogenizer Machine');
+    setSlider1(filteredProducts);
+    setSlider2(filteredProducts2);
+    setSlider3(filteredProducts3);
+    setSlider4(filteredProducts4);
+    setSlider5(filteredProducts5);
+
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+},[])
+
+
 
   // Adjust visibleCount based on screen size
   const updateVisibleCount = () => {
@@ -62,16 +87,16 @@ const ProductCarousel = () => {
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${(currentIndex * 100) / visibleCount}%)` }}
       >
-        {products.map(product => (
+        {slider1.map(product => (
           <div
             key={product.id}
             className={`flex-shrink-0 p-2`}
             style={{ width: `${100 / visibleCount}%` }}
           >
             <div className="bg-white shadow-md rounded-lg overflow-hidden w-full">
-              <img src={product.image} alt={product.name} className="w-full h-40 object-cover" />
+              <img src={product.imagePath} alt={product.booktitle} className="w-full h-40 object-cover" />
               <div className="p-2 text-center">
-                <h2 className="text-sm font-semibold">{product.name}</h2>
+                <h2 className="text-sm font-semibold">{product.booktitle}</h2>
               </div>
             </div>
           </div>
@@ -103,16 +128,16 @@ const ProductCarousel = () => {
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${(currentIndex * 100) / visibleCount}%)` }}
       >
-        {products.map(product => (
+        {slider2.map(product => (
           <div
             key={product.id}
             className={`flex-shrink-0 p-2`}
             style={{ width: `${100 / visibleCount}%` }}
           >
             <div className="bg-white shadow-md rounded-lg overflow-hidden w-full">
-              <img src={product.image} alt={product.name} className="w-full h-40 object-cover" />
+              <img src={product.imagePath} alt={product.booktitle} className="w-full h-40 object-cover" />
               <div className="p-2 text-center">
-                <h2 className="text-sm font-semibold">{product.name}</h2>
+                <h2 className="text-sm font-semibold">{product.booktitle}</h2>
               </div>
             </div>
           </div>
@@ -136,23 +161,23 @@ const ProductCarousel = () => {
     <hr />
     <div className="relative w-full overflow-hidden mt-10">
      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
-     Homogenizer Spare Parts
+     Pressure Gauge
 </h1>
 
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${(currentIndex * 100) / visibleCount}%)` }}
       >
-        {products.map(product => (
+        {slider3.map(product => (
           <div
             key={product.id}
             className={`flex-shrink-0 p-2`}
             style={{ width: `${100 / visibleCount}%` }}
           >
             <div className="bg-white shadow-md rounded-lg overflow-hidden w-full">
-              <img src={product.image} alt={product.name} className="w-full h-40 object-cover" />
+              <img src={product.imagePath} alt={product.booktitle} className="w-full h-40 object-cover" />
               <div className="p-2 text-center">
-                <h2 className="text-sm font-semibold">{product.name}</h2>
+                <h2 className="text-sm font-semibold">{product.booktitle}</h2>
               </div>
             </div>
           </div>
@@ -183,16 +208,16 @@ const ProductCarousel = () => {
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${(currentIndex * 100) / visibleCount}%)` }}
       >
-        {products.map(product => (
+        {slider4.map(product => (
           <div
             key={product.id}
             className={`flex-shrink-0 p-2`}
             style={{ width: `${100 / visibleCount}%` }}
           >
             <div className="bg-white shadow-md rounded-lg overflow-hidden w-full">
-              <img src={product.image} alt={product.name} className="w-full h-40 object-cover" />
+              <img src={product.imagePath} alt={product.booktitle} className="w-full h-40 object-cover" />
               <div className="p-2 text-center">
-                <h2 className="text-sm font-semibold">{product.name}</h2>
+                <h2 className="text-sm font-semibold">{product.booktitle}</h2>
               </div>
             </div>
           </div>
@@ -223,16 +248,16 @@ const ProductCarousel = () => {
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${(currentIndex * 100) / visibleCount}%)` }}
       >
-        {products.map(product => (
+        {slider5.map(product => (
           <div
             key={product.id}
             className={`flex-shrink-0 p-2`}
             style={{ width: `${100 / visibleCount}%` }}
           >
             <div className="bg-white shadow-md rounded-lg overflow-hidden w-full">
-              <img src={product.image} alt={product.name} className="w-full h-40 object-cover" />
+              <img src={product.imagePath} alt={product.booktitle} className="w-full h-40 object-cover" />
               <div className="p-2 text-center">
-                <h2 className="text-sm font-semibold">{product.name}</h2>
+                <h2 className="text-sm font-semibold">{product.booktitle}</h2>
               </div>
             </div>
           </div>

@@ -1,15 +1,55 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import Contact from "@/components/Contact";
+'use client'
+import axios from "axios";
 import "./Brands.css";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Contact Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Contact Page for Startup Nextjs Template",
-  // other metadata
-};
+import { useState } from "react";
+import { ApiUrl } from "@/components/Api/apiurl";
+
+
 
 const ContactPage = () => {
+
+
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      const response = await axios.post(`${ApiUrl}/public/sendenquiry`, formData); // Replace with your API endpoint
+      if (response.status === 200) {
+        setSuccess(true); // Show success message
+        setFormData({
+          name: '',
+          mobile: '',
+          message: ''
+        });
+      
+      }
+    } catch (error) {
+      setError('Failed to send the message. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  
   return (
     <>
       <div className="relative  bg-black text-white overflow-hidden">
@@ -86,47 +126,57 @@ const ContactPage = () => {
 
       {/* RIGHT SECTION */}
       <div className="flex-1 rounded bg-white dark:bg-slate-900 p-6 shadow-lg">
-        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Enquiry Form</h2>
-        <form id="contactForm" className="space-y-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-gray-100"
-          />
-          <input
-            type="number"
-            name="contact"
-            placeholder="Contact Number"
-            className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-gray-100"
-          />
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="Message"
-            className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-gray-100"
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full rounded-md bg-blue-900 px-6 py-3 text-white hover:bg-blue-800 transition"
-          >
-            Send Message
-          </button>
-        </form>
+      <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Enquiry Form</h2>
+      <form id="contactForm" className="space-y-4" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-gray-100"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="mobile"
+          placeholder="Contact Number"
+          className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-gray-100"
+          value={formData.mobile}
+          onChange={handleChange}
+        />
+        <textarea
+          name="message"
+          rows={4}
+          placeholder="Message"
+          className="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-gray-100"
+          value={formData.message}
+          onChange={handleChange}
+        ></textarea>
+        <button
+          type="submit"
+          className="w-full rounded-md bg-blue-900 px-6 py-3 text-white hover:bg-blue-800 transition"
+          disabled={loading}
+        >
+          {loading ? 'Sending...' : 'Send Message'}
+        </button>
+      </form>
 
-        <hr className="my-6 border-gray-300 dark:border-slate-700" />
+      {error && <p className="mt-4 text-red-600">{error}</p>}
+      {success && <p className="mt-4 text-green-600">Message sent successfully!</p>}
 
-        <div className="w-full">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3722.2752879616905!2d78.98741127525858!3d21.101588280566077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA2JzA1LjciTiA3OMKwNTknMjQuMCJF!5e0!3m2!1sen!2sin!4v1745082245526!5m2!1sen!2sin"
-            className="w-full rounded-md"
-            height="300"
-            style={{ border: '0' }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+      <hr className="my-6 border-gray-300 dark:border-slate-700" />
+
+      <div className="w-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3722.2752879616905!2d78.98741127525858!3d21.101588280566077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA2JzA1LjciTiA3OMKwNTknMjQuMCJF!5e0!3m2!1sen!2sin!4v1745082245526!5m2!1sen!2sin"
+          className="w-full rounded-md"
+          height="300"
+          style={{ border: '0' }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
+    </div>
     </div>
   </div>
 </section>

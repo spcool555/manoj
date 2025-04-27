@@ -17,6 +17,7 @@ const SingleProduct = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
   const [mobileNumber, setMobileNumber] = useState(''); // State to manage mobile number input
+  const [loading, setLoading] = useState(true); // Loader state for full page
 
   const imageRef = useRef(null);
 
@@ -27,9 +28,11 @@ const SingleProduct = () => {
     axios.get(`${ApiUrl}/public/singleBook?bid=${productId}`)
       .then((res) => {
         setProduct(res.data); // assuming res.data is the product object
+        setLoading(false); // Stop loading once product is fetched
       })
       .catch((err) => {
         console.error("Failed to fetch product", err);
+        setLoading(false); // Stop loading on error
       });
   }, [productId]);
 
@@ -49,7 +52,7 @@ const SingleProduct = () => {
 
   const addToQuote = () => {
     if (!product) return;
-
+  
     const storedQuoteItems = JSON.parse(localStorage.getItem('quoteItems')) || [];
     const newQuoteItem = {
       id: product.id,
@@ -57,13 +60,13 @@ const SingleProduct = () => {
       price: product.mainprice,
       category: product.subcatname
     };
-
+  
     const existingItem = storedQuoteItems.find(item => item.id === newQuoteItem.id);
     if (!existingItem) {
       const updatedQuoteItems = [...storedQuoteItems, newQuoteItem];
       localStorage.setItem('quoteItems', JSON.stringify(updatedQuoteItems));
       setQuoteItems(updatedQuoteItems);
-
+  
       Swal.fire({
         title: "Added to Quote",
         text: `${newQuoteItem.name} has been added to your quote.`,
@@ -71,7 +74,10 @@ const SingleProduct = () => {
         timer: 2000,
         timerProgressBar: true,
         showConfirmButton: false
+      }).then(() => {
+        window.location.reload();  // <-- reload after Swal closes
       });
+      
     } else {
       Swal.fire({
         title: "Already in Quote",
@@ -83,52 +89,59 @@ const SingleProduct = () => {
       });
     }
   };
+  
 
-  const [loading, setLoading] = useState(false);
+  const sendEnquiry = () => {
+    if (!mobileNumber) {
+      Swal.fire({
+        title: "Mobile number required",
+        text: "Please enter a mobile number to send the enquiry.",
+        icon: "warning",
+      });
+      return;
+    }
 
-const sendEnquiry = () => {
-  if (!mobileNumber) {
-    Swal.fire({
-      title: "Mobile number required",
-      text: "Please enter a mobile number to send the enquiry.",
-      icon: "warning",
-    });
-    return;
+    setLoading(true); // Start loader
+
+    axios.post(`${ApiUrl}/public/send-enquiry`, {
+      productId: product.id,
+      productName: product.booktitle,
+      mobileNumber,
+    })
+      .then(response => {
+        Swal.fire({
+          title: "Enquiry Sent!",
+          text: "Your enquiry has been sent successfully.",
+          icon: "success",
+          timer: 2000,
+          timerProgressBar: true,
+          showConfirmButton: false
+        });
+        setIsModalOpen(false); // Close modal
+      })
+      .catch(error => {
+        console.error("Failed to send enquiry", error);
+        Swal.fire({
+          title: "Error",
+          text: "There was an issue sending your enquiry. Please try again.",
+          icon: "error",
+        });
+      })
+      .finally(() => {
+        setLoading(false); // Stop loader
+      });
+  };
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <div className="w-16 h-16 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
-  setLoading(true); // Start loader
-
-  axios.post(`${ApiUrl}/public/send-enquiry`, {
-    productId: product.id,
-    productName: product.booktitle,
-    mobileNumber,
-  })
-    .then(response => {
-      Swal.fire({
-        title: "Enquiry Sent!",
-        text: "Your enquiry has been sent successfully.",
-        icon: "success",
-        timer: 2000,
-        timerProgressBar: true,
-        showConfirmButton: false
-      });
-      setIsModalOpen(false); // Close modal
-    })
-    .catch(error => {
-      console.error("Failed to send enquiry", error);
-      Swal.fire({
-        title: "Error",
-        text: "There was an issue sending your enquiry. Please try again.",
-        icon: "error",
-      });
-    })
-    .finally(() => {
-      setLoading(false); // Stop loader
-    });
-};
-
   if (!product) {
-    return <div className="p-10 text-center text-xl">Loading product details...</div>;
+    return <div className="p-10 text-center text-xl">Product details not found.</div>;
   }
 
   return (
@@ -179,20 +192,30 @@ const sendEnquiry = () => {
             <span className="text-black ml-2">In Stock</span>
           </div>
 
-        
-
-          <div className="mb-4">
-            <span className="font-bold text-gray-700">HSN:</span>
-            <span className="text-black ml-2">{product.hsn}</span>
-          </div>
-
           <div className="mt-8 mb-4">
             <span className="font-bold text-xl text-black">Product Description:</span>
-            <p className="mt-3 text-md text-black">
-              {product.description}
-            </p>
-          </div>
+            
+            <div style={{ lineHeight: "1.8", fontSize: "16px" }}>
+              <p><strong>Category:</strong> {product.maincatname}</p>
+              {product.author && product.author !== 'null' && (
+                <p><strong>Usage:</strong> {product.author}</p>
+              )}
 
+              {product.format && product.format !== 'null' && (
+                <p><strong>Pressure:</strong> {product.format}</p>
+              )}
+
+              {product.pagess && product.pagess !== 'null' && (
+                <p><strong>Material:</strong> {product.pagess}</p>
+              )}
+              {product.publisher && product.publisher !== 'null' && (
+                <p><strong>Set Contain:</strong> {product.publisher}</p>
+              )}
+              {product.language && product.language !== 'null' && (
+                <p><strong>Grade:</strong> {product.language}</p>
+              )}
+            </div>
+          </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <button
@@ -236,34 +259,40 @@ const sendEnquiry = () => {
               className="w-full p-2 border border-gray-300 rounded-md mb-4"
             />
             <div className="flex gap-4">
-            <button
-  className={`w-full sm:w-auto bg-green-500 text-white rounded-full px-6 py-2 flex items-center justify-center gap-2 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
-  onClick={sendEnquiry}
-  disabled={loading}
->
-  {loading && (
-    <svg
-      className="animate-spin h-5 w-5 text-white"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-      <path
-        className="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-      />
-    </svg>
-  )}
-  {loading ? "Sending..." : "Send"}
-</button>
-
+              <button
+                className={`w-full sm:w-auto bg-green-500 text-white rounded-full px-6 py-2 flex items-center justify-center gap-2 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                onClick={sendEnquiry}
+                disabled={loading}
+              >
+                {loading && (
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    />
+                  </svg>
+                )}
+                {loading ? "Sending..." : "Send"}
+              </button>
               <button
                 className="w-full sm:w-auto bg-gray-300 text-black rounded-full px-6 py-2"
                 onClick={() => setIsModalOpen(false)}
               >
-                Cancel
+                Back
               </button>
             </div>
           </div>
