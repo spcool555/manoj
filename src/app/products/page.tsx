@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import axios from 'axios';
 import { ApiUrl } from '@/components/Api/apiurl';
@@ -81,4 +81,11 @@ const Products = () => {
   );
 };
 
-export default Products;
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div>Loading products...</div>}>
+      <Products />
+    </Suspense>
+  );
+}
