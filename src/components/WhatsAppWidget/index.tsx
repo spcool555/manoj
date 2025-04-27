@@ -8,7 +8,7 @@ function WhatsAppWidget() {
 
 
       <FloatingWhatsApp
-  phoneNumber="8767474066"  // Your WhatsApp number
+  phoneNumber="918767474066"  // Your WhatsApp number
   accountName="Manoj Engineering"
   statusMessage="Typically replies within a few hours"
   chatMessage="Hello! How can we help you today?"
