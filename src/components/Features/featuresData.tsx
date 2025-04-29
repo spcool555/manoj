@@ -4,7 +4,7 @@ const featuresData: Feature[] = [
   {
     id: 1,
     icon: (
-      <img src="https://goma.co.in/uploads/equipments/a2f22e0ccff06fc98feec677c96eda2e.jpg" alt="" />
+      <img src="https://s.alicdn.com/@sc04/kf/H49103a01c4ab4684a57a3edb9759f3eef.png_300x300.jpg" alt="" />
     ),
     title: "Homogeniser",
     paragraph:"Buy Conductors at Manoj Engineering Consultant  India. Access fast quotes, same-day dispatch, and quick delivery on a wide range of conductors for your electrical and electronic needs. ",
@@ -14,7 +14,7 @@ const featuresData: Feature[] = [
   {
     id: 2,
     icon: (
-     <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/AM/QL/MJ/131910352/milk-homogenizer-machine-500x500.jpg" alt="" />
+     <img src="images/products/mec.jpg" alt="" />
     ),
     title: "Milk homogeniser",
     paragraph:
@@ -37,7 +37,7 @@ const featuresData: Feature[] = [
     id: 4,
     icon: (
     // <img src="images/hero/a4.png" alt=""/>
-    <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/377882203/XQ/VE/MQ/68673917/homogenizer-spare-parts-1000x1000.png" alt=""/>
+    <img src="images/products/homov.jpg" alt=""/>
     ),
     title: "Homogenizer Valve",
     paragraph:

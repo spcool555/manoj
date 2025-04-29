@@ -18,6 +18,9 @@ const AdminProducts = () => {
     pagess: '', // 🆕 added
     publisher: '', // 🆕 added
     language: '', // 🆕 added
+    publishercode: '', // 🆕 added
+    recomandate: '', // 🆕 added
+    searchcategory: '', // 🆕 added
   });
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -51,6 +54,9 @@ const AdminProducts = () => {
     payload.append('pagess', formData.pagess);
     payload.append('publisher', formData.publisher);
     payload.append('language', formData.language);
+    payload.append('publishercode', formData.publishercode);
+    payload.append('recomandate', formData.recomandate);
+    payload.append('searchcategory', formData.searchcategory);
     payload.append('maincatname', formData.maincatname);
     if (imageFile) {
       payload.append('imageFile', imageFile);
@@ -122,6 +128,9 @@ const AdminProducts = () => {
       pagess: '',
       publisher: '',
       language: '',
+      searchcategory: '',
+      recomandate: '',
+      publishercode: '',
     });
     setImageFile(null);
     setImagePreview(null);
@@ -149,6 +158,9 @@ const AdminProducts = () => {
         pagess: bookToEdit.pagess,
         publisher: bookToEdit.publisher,
         language: bookToEdit.language,
+        publishercode: bookToEdit.publishercode,
+        recomandate: bookToEdit.recomandate,
+        searchcategory: bookToEdit.searchcategory,
         description: bookToEdit.description,
         maincatname: bookToEdit.maincatname?.toString() || '',
       });
@@ -282,6 +294,33 @@ const AdminProducts = () => {
             />
             <input
               type="text"
+              name="searchcategory" //brand
+              value={formData.searchcategory}
+              onChange={handleChange}
+              placeholder="Brand"
+              className="w-64 p-2 border rounded-md"
+              
+            />
+            <input
+              type="text"
+              name="recomandate" //modal
+              value={formData.recomandate}
+              onChange={handleChange}
+              placeholder="Modal"
+              className="w-64 p-2 border rounded-md"
+              
+            />
+            <input
+              type="text"
+              name="publishercode" //capicity
+              value={formData.publishercode}
+              onChange={handleChange}
+              placeholder="Capicity"
+              className="w-64 p-2 border rounded-md"
+              
+            />
+            <input
+              type="text"
               name="pagess"
               value={formData.pagess}
               onChange={handleChange}
@@ -311,7 +350,7 @@ const AdminProducts = () => {
               name="description"
               value={formData.description}
               onChange={handleChange}
-              placeholder="Description"
+              placeholder="SEO Keywords"
               rows={4}
               className="w-full p-2 border rounded-md"
               

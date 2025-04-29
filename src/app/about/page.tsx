@@ -109,10 +109,7 @@ const AboutPage = () => {
             <p className="font-semibold">Legal Status of Firm:</p>
             <p>Proprietorship</p>
           </div>
-          <div>
-            <p className="font-semibold">Annual Turnover:</p>
-            <p>01 cr - 04 cr</p>
-          </div>
+        
           <div>
             <p className="font-semibold">GST Registration Date:</p>
             <p>01-07-2017</p>
@@ -150,7 +147,7 @@ const AboutPage = () => {
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
             <p className="max-w-3xl mx-auto text-lg text-gray-300">
-              At Manoj Engineering Consultant, our mission is to deliver innovative, durable, and affordable engineering solutions that empower industries across India. We are committed to excellence in product quality and customer satisfaction.
+            At Manoj Engineering Consultant, our mission is to deliver innovative, durable, and affordable engineering solutions that empower industries across India. We are committed to excellence in product quality and customer satisfaction.
             </p>
           </div>
         </div>

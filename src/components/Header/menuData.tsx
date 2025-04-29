@@ -72,21 +72,21 @@ const menuData = [
     title: "Services",
     submenu: [
       {
-        title: "ARIETE SERIES ARIETE",
+        title: "GEA Homogenizers",
         path: "/manojpdf.pdf",
         img: "https://cdn.gea.com/-/media/migratedfromtridion/products/ariete-homogenizer-5400-37747.jpg?h=1350&iar=0&w=2400&rev=a505dec9600741c4b365b28b61169078&hash=37848562C37790A82080AC029E3C5E49",
         desc: "NS2006ARIETE NS3006ARIETE NS3011ARIETE NS3015ARIETЕ NS3030ARIETE NS3037ARIETE NS3045ARIETE NS3055ARIETE NS3075ARIETE NS3090ARIETE NS3110ARIETE NS5132ARIETЕ NS5180ARIETE HOMOGENISER 5315 ARIETE ",
         links: [{ title: "Find Out More", path: "/manojpdf.pdf" }],
       },
       {
-        title: "TETRA ALEX",
+        title: "TETRA PAK Homogenizers",
         path: "/manojpdf.pdf",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVL5k45gqzBjEPt6DmACxozJnmx95inGIvtQ&s",
         desc: "2 TETRA ALEX, S05 TETRA ALEX, S15 TETRA ALEX, 20 TETRA ALEX, 30 TETRA ALEX, 25 TETRA ALEX, 40 TETRA ALEX, 45 TETRA ALEX, 350 TETRA ALEX 400 ",
         links: [{ title: "Find Out More", path: "/manojpdf.pdf" }],
       },
       {
-        title: "APV MANTON GAULIN",
+        title: "PX FLOW / APV Gaulin Homogenizers",
         path: "/manojpdf.pdf",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuheCelcABfJynJJaJNFW0ZOGzqMvEYJBsIg&s",
         desc: "We use industry-standard software such as CDEGS, ensuring safety, reliability, & full compliance with IEEE 80 & IEC 60364 standards.",
@@ -94,7 +94,7 @@ const menuData = [
         links: [{ title: "Find Out More", path: "/manojpdf.pdf" }],
       },
       {
-        title: "FBF BUFFALO SERIES",
+        title: "FBF Homogenizers",
         path: "/manojpdf.pdf",
         img: "https://3.imimg.com/data3/DL/QK/MY-4034368/fbf-h-p-homogenizers-buffalo-series-500x500.jpg",
         desc: "FBF 001, FBF 003, FBF 007, FBF 009, FBF 012, FBF014, FBF 016, FBF 019, FBF 032, FBF 038, FBF 044, FBF 058, FBF 078, FBF 092, FBF 094, FBF 114, FBF 162, FBF 202, FBF 2004, FBF 4018.",
