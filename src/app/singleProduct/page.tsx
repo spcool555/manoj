@@ -215,6 +215,15 @@ const SingleProduct = () => {
               {product.language && product.language !== 'null' && (
                 <p><strong>Grade:</strong> {product.language}</p>
               )}
+              {product.publishercode && product.publishercode !== 'null' && (
+                <p><strong>Capacity:</strong> {product.publishercode}</p>
+              )}
+              {product.recomandate && product.recomandate !== 'null' && (
+                <p><strong>Modal:</strong> {product.recomandate}</p>
+              )}
+              {product.searchcategory && product.searchcategory !== 'null' && (
+                <p><strong>Brand:</strong> {product.searchcategory}</p>
+              )}
             </div>
           </div>
 
