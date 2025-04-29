@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import axios from 'axios';
 import { ApiUrl } from '@/components/Api/apiurl';
+import Head from 'next/head';
 
 const Products = () => {
   const router = useRouter();
@@ -47,40 +48,55 @@ const Products = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 mt-20">
-      {products.length > 0 ? (
-        products.map((product) => (
-          <div
-            key={product.id}
-            onClick={() => handleProductClick(product.id)}
-            className="cursor-pointer w-[310px] h-[430px] mx-auto bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-200"
-          >
-            {/* Image */}
-            <div className="w-full h-[300px] bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-lg">
-              <img
-                src={product?.imagePath}
-                alt={product?.booktitle}
-                className="w-full h-full object-cover"
-              />
-            </div>
+    <>
+      <Head>
+        <title>{category ? `${category} Products` : 'All Products'}</title>
+        <meta name="description" content={`Browse a wide selection of ${category || 'products'} available for purchase.`} />
+        <meta property="og:title" content={`Buy ${category || 'products'} online`} />
+        <meta property="og:description" content={`Explore our diverse range of ${category || 'products'} to find what you need.`} />
+        <meta property="og:image" content="/images/logo/official.jpeg" />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`Buy ${category || 'products'} online`} />
+        <meta name="twitter:description" content={`Explore our diverse range of ${category || 'products'} to find what you need.`} />
+        <meta name="twitter:image" content="/images/logo/official.jpeg" />
+        <meta name="robots" content="index, follow" />
+      </Head>
 
-            {/* Title */}
-            <div className="p-4 flex justify-center items-center h-[130px]">
-              <h3 className="text-black text-center text-lg font-semibold leading-snug">
-                {product?.booktitle}
-              </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 mt-20">
+        {products.length > 0 ? (
+          products.map((product) => (
+            <div
+              key={product.id}
+              onClick={() => handleProductClick(product.id)}
+              className="cursor-pointer w-[310px] h-[430px] mx-auto bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-200"
+            >
+              {/* Image */}
+              <div className="w-full h-[300px] bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-lg">
+                <img
+                  src={product?.imagePath}
+                  alt={product?.booktitle}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Title */}
+              <div className="p-4 flex justify-center items-center h-[130px]">
+                <h3 className="text-black text-center text-lg font-semibold leading-snug">
+                  {product?.booktitle}
+                </h3>
+              </div>
             </div>
+          ))
+        ) : (
+          <div className="col-span-full text-center text-gray-500 mt-10">
+            No products found.
           </div>
-        ))
-      ) : (
-        <div className="col-span-full text-center text-gray-500 mt-10">
-          No products found.
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
-
 
 export default function ProductsPage() {
   return (

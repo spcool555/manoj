@@ -3,9 +3,32 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "About Page | Free Next.js Template for Startup and SaaS",
-  description: "This is About Page for Startup Nextjs Template",
-  // other metadata
+  title: "About Us | Manoj Engineering Consultant",
+  description: "Manoj Engineering Consultant is a leading manufacturer of high-quality engineering products like valves, homogenizer spare parts, and more.",
+  openGraph: {
+    title: "About Us | Manoj Engineering Consultant",
+    description: "Manoj Engineering Consultant is a trusted manufacturer of stainless steel valves, homogenizer spare parts, and more.",
+    url: "https://www.navneetlawstudio.com/about",
+    type: "website",
+    images: [
+      {
+        url: "/images/manoj-slider/3.jpg",
+        alt: "Manoj Engineering Consultant - About Us",
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Manoj Engineering Consultant",
+    description: "Manoj Engineering Consultant provides top-notch engineering solutions. Learn about our services and products.",
+    images: "https://mechomogenizer.com/images/logo/official.jpeg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const AboutPage = () => {

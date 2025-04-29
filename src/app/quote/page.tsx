@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2"; // Assuming you use it
 import './Brands.css';
 import { ApiUrl } from "@/components/Api/apiurl";
+import Head from "next/head";
 
 const Quote = () => {
   const [quoteItems, setQuoteItems] = useState([]);
@@ -96,6 +97,28 @@ const Quote = () => {
 
   return (
     <>
+    <Head>
+  <title>Request a Quote | Your Brand Name</title>
+  <meta name="description" content="Request a quote for your selected products. Send us your enquiry and we’ll get back to you with the best offer." />
+  <meta name="keywords" content="product quote, bulk enquiry, request quotation, contact us, Your Brand Name" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://mechomogenizer.com/quote" />
+
+  {/* Open Graph / Facebook */}
+  <meta property="og:title" content="Request a Quote | Your Brand Name" />
+  <meta property="og:description" content="Send an enquiry for the products you're interested in and get the best price from Your Brand Name." />
+  <meta property="og:url" content="https://mechomogenizer.com/quote" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://mechomogenizer.com/images/logo/official.jpeg" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Request a Quote | Your Brand Name" />
+  <meta name="twitter:description" content="Send an enquiry for the products you're interested in and get the best price from Your Brand Name." />
+  <meta name="twitter:image" content="https://mechomogenizer.com/images/logo/official.jpeg" />
+</Head>
+
       {/* Fullscreen loader */}
       {loading && (
         <div className="fullscreen-loader">

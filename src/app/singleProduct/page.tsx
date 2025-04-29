@@ -6,6 +6,7 @@ import Link from "next/link";
 import './singleProduct.css';
 import axios from 'axios';
 import { ApiUrl } from '@/components/Api/apiurl';
+import Head from 'next/head';
 
 const SingleProduct = () => {
   const searchParams = useSearchParams();
@@ -146,6 +147,15 @@ const SingleProduct = () => {
 
   return (
     <>
+      <Head>
+        <title>{product.booktitle} | mechomogenizer</title>
+        <meta name="description" content={product.description?.substring(0, 160)} />
+        <meta property="og:title" content={product.booktitle} />
+        <meta property="og:description" content={product.description?.substring(0, 160)} />
+        <meta property="og:image" content={product.imagePath} />
+        <meta property="og:url" content={`https://mechomogenizer.com/singleProduct?${product.id}`} />
+        <meta name="robots" content="index, follow" />
+      </Head>
       <section className="privacy-header bg-dark text-white py-14 mt-16">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold">Products</h1>
