@@ -62,6 +62,10 @@ const AboutSectionOne = () => {
     "sachi.png",
     "suruchi.png",
     "topntown.jpg",
+    "c1.jpeg",
+    "c2.jpeg",
+    "c3.jpeg",
+    "c4.jpeg",
   ];
 
   return (

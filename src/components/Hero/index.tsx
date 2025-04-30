@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import img1 from '../../../public/images/manoj-slider/about_slider.jpg'
 import img2 from '../../../public/images/manoj-slider/Lube-Pumps-Manufacturer.jpg'
-import img3 from '../../../public/images/manoj-slider/3.jpg'
+import img3 from '../../../public/images/manoj-slider/banner3.jpg'
 import img4 from '../../../public/images/manoj-slider/sl2.jpg'
 import Image from "next/image";
 
