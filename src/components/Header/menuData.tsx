@@ -32,7 +32,8 @@ const menuData = [
   { title: "Crank shaft", path: "/products?category=Crank shaft" },
   { title: "Phe cooling", path: "/products?category=Phe cooling" },
   { title: "Oil pump", path: "/products?category=Oil pump" },
-  { title: "Gear pump", path: "/products?category=Gear pump" }
+  { title: "Gear pump", path: "/products?category=Gear pump" },
+  { title: "Pneumatic cylinder", path: "/products?category=Pneumatic cylinder" }
         
         ],
       },
