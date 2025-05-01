@@ -25,7 +25,7 @@ const menuData = [
       
         links: [
           { title: "High Pressure Homogenizer", path: "/products?category=High Pressure Homogenizer" },
-  { title: "Homogenizer Machine And Spare Parts", path: "/products?category=Homogenizer Machine And Spare Parts" },
+  // { title: "Homogenizer Machine And Spare Parts", path: "/products?category=Homogenizer Machine And Spare Parts" },
   { title: "Fiber Optic Sensors", path: "/products?category=Fiber Optic Sensors" },
   { title: "Homogeniser valve", path: "/products?category=Homogeniser valve" },
   { title: "Ice Cream Homogenizer", path: "/products?category=Ice Cream Homogenizer" },
