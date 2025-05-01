@@ -15,7 +15,8 @@ const menuData = [
   { title: "Homogeniser goma galine tetrapack gea Bartoli etc", path: "/products?category=Homogeniser goma galine tetrapack gea Bartoli etc" },
   { title: "Homogeniser", path: "/products?category=Homogeniser" },
   { title: "Milk homogeniser", path: "/products?category=Milk homogeniser" },
-  { title: "Pressure Gauge", path: "/products?category=Pressure Gauge" }
+  { title: "Pressure Gauge", path: "/products?category=Pressure Gauge" },
+  { title: "Pneumatic cylinder", path: "/products?category=Pneumatic cylinder" }
         
         ],
       },
@@ -31,10 +32,8 @@ const menuData = [
   { title: "Piston seal or plunger seal", path: "/products?category=Piston seal or plunger seal" },
   { title: "Crank shaft", path: "/products?category=Crank shaft" },
   { title: "Phe cooling", path: "/products?category=Phe cooling" },
-  { title: "Oil pump", path: "/products?category=Oil pump" },
-  { title: "Gear pump", path: "/products?category=Gear pump" },
-  { title: "Pneumatic cylinder", path: "/products?category=Pneumatic cylinder" }
-        
+  { title: "Oil pump", path: "/products?category=Oil pump" }
+      
         ],
       },
 
@@ -48,8 +47,10 @@ const menuData = [
           { title: "Seals", path: "/products?category=Seals" },
           { title: "Industrial Valve", path: "/products?category=Industrial Valve" },
           { title: "Connecting rod", path: "/products?category=Connecting rod" },
-          { title: "Flow sensor", path: "/products?category=Flow sensor" }
-        
+          { title: "Flow sensor", path: "/products?category=Flow sensor" },
+          { title: "Gear pump", path: "/products?category=Gear pump" }
+          
+           
         
         ],
       },
