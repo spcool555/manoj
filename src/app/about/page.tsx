@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Us | Manoj Engineering Consultant",
     description: "Manoj Engineering Consultant is a trusted manufacturer of stainless steel valves, homogenizer spare parts, and more.",
-    url: "https://www.navneetlawstudio.com/about",
+    url: "https://mechomogenizer.com/about",
     type: "website",
     images: [
       {
-        url: "/images/manoj-slider/3.jpg",
+        url: "/images/manoj-slider/Lube-Pumps-Manufacturer.jpg",
         alt: "Manoj Engineering Consultant - About Us",
         width: 800,
         height: 600,
@@ -37,7 +37,7 @@ const AboutPage = () => {
 
       <div className="relative  bg-black text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/manoj-slider/3.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
+          <img src="/images/manoj-slider/Lube-Pumps-Manufacturer.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
 

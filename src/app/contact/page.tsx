@@ -54,7 +54,7 @@ const ContactPage = () => {
     <>
       <div className="relative  bg-black text-white overflow-hidden">
   <div className="absolute inset-0">
-    <img src="images/manoj-slider/3.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
+    <img src="images/manoj-slider/Lube-Pumps-Manufacturer.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
     <div className="absolute inset-0 bg-black opacity-50"></div>
   </div>
   

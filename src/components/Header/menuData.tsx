@@ -29,7 +29,10 @@ const menuData = [
   { title: "Homogeniser valve", path: "/products?category=Homogeniser valve" },
   { title: "Ice Cream Homogenizer", path: "/products?category=Ice Cream Homogenizer" },
   { title: "Piston seal or plunger seal", path: "/products?category=Piston seal or plunger seal" },
-  { title: "Swimming Pool Motor With Strainer", path: "/products?category=Swimming Pool Motor With Strainer" }
+  { title: "Crank shaft", path: "/products?category=Crank shaft" },
+  { title: "Phe cooling", path: "/products?category=Phe cooling" },
+  { title: "Oil pump", path: "/products?category=Oil pump" },
+  { title: "Gear pump", path: "/products?category=Gear pump" }
         
         ],
       },
@@ -38,12 +41,13 @@ const menuData = [
     
         links: [
           { title: "Homogeniser part", path: "/products?category=Homogeniser part" },
-          { title: "Mild Steel Spring", path: "/products?category=Mild Steel Spring" },
+          { title: "Oil seal", path: "/products?category=Oil seal" },
           { title: "Homogenizer Plunger", path: "/products?category=Homogenizer Plunger" },
           { title: "Gaskets", path: "/products?category=Gaskets" },
           { title: "Seals", path: "/products?category=Seals" },
           { title: "Industrial Valve", path: "/products?category=Industrial Valve" },
-          { title: "Hplc System And Accessories", path: "/products?category=Hplc System And Accessories" }
+          { title: "Connecting rod", path: "/products?category=Connecting rod" },
+          { title: "Flow sensor", path: "/products?category=Flow sensor" }
         
         
         ],
@@ -54,14 +58,15 @@ const menuData = [
       {
        
         links: [
-          { title: "Copier Paper", path: "/products?category=Copier Paper" },
+          { title: "Filter", path: "/products?category=Filter" },
           { title: "Polycarbonate Seal", path: "/products?category=Polycarbonate Seal" },
           { title: "Oil Seal", path: "/products?category=Oil Seal" },
           { title: "Industrial Chemicals", path: "/products?category=Industrial Chemicals" },
           { title: "Fiber Sensor", path: "/products?category=Fiber Sensor" },
-          { title: "Metal Piston", path: "/products?category=Metal Piston" },
+          { title: "Gearbox", path: "/products?category=Gearbox" },
           { title: "Rubber Oil Seal", path: "/products?category=Rubber Oil Seal" },
-          { title: "New Items", path: "/products?category=New Items" }
+          { title: "1st &2 nd stage valve", path: "/products?category=1st &2 nd stage valve" },
+          { title: "Safety valve", path: "/products?category=Safety valve" }
                 ],
       },
 
