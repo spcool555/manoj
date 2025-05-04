@@ -75,7 +75,7 @@ const Products = () => {
               <div className="w-full h-[300px] bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-lg">
                 <img
                   src={product?.imagePath}
-                  alt={product?.booktitle}
+                  alt={product?.description}
                   className="w-full h-full object-cover"
                 />
               </div>

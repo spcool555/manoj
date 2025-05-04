@@ -175,7 +175,7 @@ const SingleProduct = () => {
     <img
       ref={imageRef}
       src={product.imagePath}
-      alt={product.booktitle}
+      alt={product.description}
       className="w-full h-full object-contain sm:h-[300px] md:h-[500px]"
     />
     {hover && (
