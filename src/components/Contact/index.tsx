@@ -9,10 +9,10 @@ const Contact = () => {
       className="w-full bg-white   flex flex-col lg:flex-row  items-center  py-6 sm:py-9 md:py-11 lg:py-14  px-2  sm:px-4 md:px-8 xl:px-16">
       <img className="w-full lg:w-1/2 xl:w-full max-w-[400px] lg:order-2" src="https://iili.io/2ysFUen.png" alt=""/>
       <div className="text-center md:text-left">
-        <h1
+        <h2
           className="text-2xl leading-[48px] md:text-5xl md:leading-[58px] lg:text-[30px] lg:leading-[70px] font-bold mb-4 md:mb-4">
  Empowering Industries with Precision Engineering
-        </h1>
+        </h2>
         <p className="text-xl leading-[27px]  font-normal sm:text-[24px] mb-8 md:mb-12">
         Explore premium-quality stainless steel valves, homogenizer spare parts, and expert machinery solutions crafted by <span style={{color:'#EA6321'}}> Manoj Engineering Consultant. </span>   Trusted across Nagpur and beyond for reliable products, competitive pricing, and on-time delivery. We also specialize in Milk Homogenizer Repairing Services, ensuring your operations never stop
         </p>

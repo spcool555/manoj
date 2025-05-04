@@ -10,9 +10,9 @@ const Blog = () => {
         className="bg-blue-50 dark:bg-bg-color-dark md:py-10 mb-5 lg:py-8"
       >
         <div className="container">
-            <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6 pt-5">
+            <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6 pt-5">
      Brands
-</h1>
+</h2>
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
             {blogData.map((blog) => (

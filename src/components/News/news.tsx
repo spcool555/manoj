@@ -21,8 +21,8 @@ export default function NewsPage() {
         {/* Right Side - Summary */}
         <div className="flex flex-col justify-between">
           <div>
-            <h1 className="text-[18px] sm:text-3xl font-bold mb-4 text-gray-800">MANOJ ENGINEERING
-            CONSULTANT</h1>
+            <h1 className="text-[18px] sm:text-3xl font-bold mb-4 text-gray-800">MEC Homogenizer Spare Parts
+            </h1>
             <p className="text-gray-700 mb-4">
             Welcome to Manoj Engineering Consultant – your premier destination for all your homogenizer spare parts and service needs!
 

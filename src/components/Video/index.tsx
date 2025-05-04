@@ -17,7 +17,7 @@ const Video = () => {
     </div>
     
     <div className="relative z-10 flex flex-col justify-center items-center h-full text-center pt-12">
-      <h1 className="text-4xl lg:text-5xl leading-tight my-4 text-white">40+ Years Of Trust</h1>
+      <h2 className="text-4xl lg:text-5xl leading-tight my-4 text-white">40+ Years Of Trust</h2>
       <p className="w-11/12 lg:w-3/5 text-lg text-white mb-8">With over 40+ years of trusted expertise, we specialize in the production of high-quality electrical equipment, ensuring reliability, innovation, and industry-leading standards.</p>
     </div>
 

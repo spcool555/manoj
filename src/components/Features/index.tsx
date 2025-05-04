@@ -29,10 +29,10 @@ const Features = () => {
       <section className=" w-full px-8 py-6">
       {/* <!-- Content --> */}
   <div className="relative z-10 container mx-auto px-4 text-center text-black">
-    <h1 className="mb-6 text-2xl font-bold tracking-tight sm:text-2xl md:text-6xl lg:text-4xl">
+    <h2 className="mb-6 text-2xl font-bold tracking-tight sm:text-2xl md:text-6xl lg:text-4xl">
     Our Products <span className="relative whitespace-nowrap text-[#EA6321] dark:text-[#EA6321]">        <span className="relative">Range</span>
       </span>
-    </h1>
+    </h2>
  
   </div>
 

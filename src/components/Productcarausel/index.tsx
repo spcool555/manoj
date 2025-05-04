@@ -106,9 +106,9 @@ const ProductCarousel = () => {
     <>
       {/* Slider 1 */}
       <div className="relative w-full overflow-hidden mt-10">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
           Homogenizer Spare Parts
-        </h1>
+        </h2>
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${(currentIndex1 * 100) / visibleCount}%)` }}
@@ -140,9 +140,9 @@ const ProductCarousel = () => {
 
       {/* Slider 2 */}
       <div className="relative w-full overflow-hidden mt-10">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
           Homogenizer Valve
-        </h1>
+        </h2>
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${(currentIndex2 * 100) / visibleCount}%)` }}

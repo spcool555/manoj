@@ -72,9 +72,9 @@ const AboutSectionOne = () => {
     <section id="about" className="py-16 md:pt-20 lg:pt-18 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <main className="relative font-inter antialiased">
-          <h1 className="mb-10 text-4xl font-bold text-center leading-none tracking-tight text-[#1e3690] underline dark:text-[#22295C]">
+          <h2 className="mb-10 text-4xl font-bold text-center leading-none tracking-tight text-[#1e3690] underline dark:text-[#22295C]">
             OUR CLIENTS
-          </h1>
+          </h2>
 
           <div className="overflow-hidden">
             <Slider {...settings}>
