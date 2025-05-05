@@ -5,6 +5,7 @@ import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
 import './feature.css'
 import Link from "next/link";
+import Head from "next/head";
 
 const Features = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,6 +26,13 @@ const Features = () => {
 
   return (  
     <>
+    <Head>
+  <title>Industrial Components – Assembly Drawing, O-Ring, Valve Seat | Manoj Engineering</title>
+  <meta
+    name="description"
+    content="Explore our range of components including assembly drawing, O-ring, valve seat, washer, shaft, gasket, and more – precision-engineered for industrial reliability."
+  />
+</Head>
       <section id="features" className="relative">
       <section className=" w-full px-8 py-6">
       {/* <!-- Content --> */}
@@ -37,12 +45,16 @@ const Features = () => {
   </div>
 
   <div className="container text-black">
-          {/* <SectionTitle
-            title="Our Products Range"
-            paragraph="Matrix Incorporation is a well-reputed organisation located in Secunderabad, Telangana. Our company brings an incredible change in the products related"
-            center
-      
-          /> */}
+  <div className="text-center mt-4 text-sm text-gray-600 max-w-4xl mx-auto">
+  <p>
+    Our wide product range includes top-quality components like <strong>ASSEMBLY DRAWING</strong>, 
+    <strong> PRESSURE GAUGE</strong>, <strong>WASHER</strong>, <strong>FLANGE</strong>, <strong>GASKET</strong>, 
+    <strong>O-RING</strong>, <strong>STUD</strong>, and <strong>NUT</strong>. We provide reliable and durable 
+    parts suitable for various engineering and industrial applications.
+  </p>
+</div>
+
+<br /><br />
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 animate-fade-in">
             {featuresData.map((feature) => (

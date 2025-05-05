@@ -133,7 +133,7 @@ const ProductCarousel = () => {
         <button onClick={() => prevSlide(1)} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10">
           ❮
         </button>
-        <button onClick={() => nextSlide(1)} className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10">
+        <button onClick={() => nextSlide(1)} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10">
           ❯
         </button>
       </div>
@@ -165,7 +165,7 @@ const ProductCarousel = () => {
         <button onClick={() => prevSlide(2)} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10">
           ❮
         </button>
-        <button onClick={() => nextSlide(2)} className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10">
+        <button onClick={() => nextSlide(2)} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10">
           ❯
         </button>
       </div>

@@ -23,10 +23,14 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
+
+<>
+
     <section className="bg-black py-16 px-6 md:px-10">
       <h2 className="text-3xl font-bold text-white text-center mb-12">Testimonials</h2>
 
       <div className="max-w-7xl mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
         {testimonials.map((t, idx) => (
           <motion.div
             key={idx}
@@ -61,6 +65,75 @@ const Testimonial = () => {
         ))}
       </div>
     </section>
+    <section className="p-4 md:p-8">
+  <h1 className="text-2xl font-bold mb-4 text-gray-800">GEA Niro Soavi TT-0100 Lubricating Unit – Parts List</h1>
+  
+  <div className="overflow-x-auto">
+    <table className="min-w-full border border-gray-300 rounded-lg shadow-md">
+      <thead className="bg-gray-100 text-gray-700 text-sm uppercase">
+        <tr>
+          <th className="px-4 py-2 border">Description</th>
+          <th className="px-4 py-2 border">Part Code</th>
+          <th className="px-4 py-2 border">Item Ref</th>
+        </tr>
+      </thead>
+      <tbody className="text-gray-800 text-sm">
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Moto Flange</td>
+          <td className="px-4 py-2 border">110570</td>
+          <td className="px-4 py-2 border">A</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Suction Filter 3/4&quot;G Mesh</td>
+          <td className="px-4 py-2 border">–</td>
+          <td className="px-4 py-2 border">A1</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Body Kit</td>
+          <td className="px-4 py-2 border">260912</td>
+          <td className="px-4 py-2 border">B</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">By-Pass</td>
+          <td className="px-4 py-2 border">261282</td>
+          <td className="px-4 py-2 border">C</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Joint</td>
+          <td className="px-4 py-2 border">261185</td>
+          <td className="px-4 py-2 border">D</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Main Pump Kit</td>
+          <td className="px-4 py-2 border">260913</td>
+          <td className="px-4 py-2 border">E</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Discharge Manifold Kit TP3</td>
+          <td className="px-4 py-2 border">260919/1</td>
+          <td className="px-4 py-2 border">F</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Coupling 3/4&quot;G–3/8&quot;G</td>
+          <td className="px-4 py-2 border">0133364</td>
+          <td className="px-4 py-2 border">G</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Tank Lt. 8 1&quot;G TP3</td>
+          <td className="px-4 py-2 border">260915/1</td>
+          <td className="px-4 py-2 border">H</td>
+        </tr>
+        <tr className="hover:bg-gray-50">
+          <td className="px-4 py-2 border">Lubricating Unit TP3 GR 1/6.1</td>
+          <td className="px-4 py-2 border">260916/1</td>
+          <td className="px-4 py-2 border">I</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</>
   );
 };
 
