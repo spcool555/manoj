@@ -65,7 +65,7 @@ const Testimonial = () => {
         ))}
       </div>
     </section>
-    <section className="p-4 md:p-8">
+    <section hidden className="p-4 md:p-8">
   <h1 className="text-2xl font-bold mb-4 text-gray-800">GEA Niro Soavi TT-0100 Lubricating Unit – Parts List</h1>
   
   <div className="overflow-x-auto">
