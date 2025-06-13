@@ -264,7 +264,7 @@
         formData.append("attachments", file);
       }
 
-      const res = await fetch('https://mechomogenizer.com/api/email/send', {
+      const res = await fetch('http://46.202.164.11:8080/api/email/send', {
       // const res = await fetch('http://localhost:8080/api/email/send', {
         method: 'POST',
         body: formData
