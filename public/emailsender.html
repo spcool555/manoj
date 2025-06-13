@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Send Email with Attachments</title>
+
+  <!-- SheetJS for Excel parsing -->
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      margin-top: 1em;
+      display: block;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    input[type="file"] {
+      padding: 7px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 12px 25px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #response, #error {
+      margin-top: 1em;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+
+    #response {
+      color: #155724;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+    }
+
+    #error {
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+    }
+
+ 
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="dd">
+        
+        <h1>Send Email</h1>
+        <a href="./Book.xlsx" download>Download Sample Excel</a>
+    </div>
+
+  <form id="emailForm">
+    <label>Upload Excel for To/CC/BCC:
+      <input type="file" id="excelFile" accept=".xlsx, .xls" />
+    </label>
+
+    <label>To (comma separated emails):
+      <input type="text" id="to" required placeholder="receiver@example.com, another@example.com" />
+    </label>
+
+    <label>CC (comma separated emails):
+      <input type="text" id="cc" placeholder="cc@example.com" />
+    </label>
+
+    <label>BCC (comma separated emails):
+      <input type="text" id="bcc" placeholder="bcc@example.com" />
+    </label>
+
+    <label>Subject:
+      <input type="text" id="subject" required placeholder="Email Subject" />
+    </label>
+
+    <label>Body:
+      <textarea id="body" rows="5" required placeholder="Write your email body here..."></textarea>
+    </label>
+
+    <label>Attachments:
+      <input type="file" id="attachments" multiple />
+    </label>
+
+    <button type="submit">Send Email</button>
+  </form>
+
+  <div id="response" style="display: none;"></div>
+  <div id="error" style="display: none;"></div>
+</div>
+
+<!-- <script>
+  const form = document.getElementById('emailForm');
+  const responseDiv = document.getElementById('response');
+  const errorDiv = document.getElementById('error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    responseDiv.style.display = 'none';
+    errorDiv.style.display = 'none';
+    responseDiv.textContent = '';
+    errorDiv.textContent = '';
+
+    const to = document.getElementById('to').value.split(',').map(s => s.trim()).filter(s => s);
+    const cc = document.getElementById('cc').value.split(',').map(s => s.trim()).filter(s => s);
+    const bcc = document.getElementById('bcc').value.split(',').map(s => s.trim()).filter(s => s);
+    const subject = document.getElementById('subject').value;
+    const body = document.getElementById('body').value;
+    const attachmentsInput = document.getElementById('attachments');
+
+    const emailRequest = {
+      to: to,
+      cc: cc.length ? cc : null,
+      bcc: bcc.length ? bcc : null,
+      subject: subject,
+      body: body
+    };
+
+    try {
+      const formData = new FormData();
+      const emailBlob = new Blob([JSON.stringify(emailRequest)], { type: "application/json" });
+      formData.append("email", emailBlob);
+
+      for (const file of attachmentsInput.files) {
+        formData.append("attachments", file);
+      }
+
+      const res = await fetch('http://localhost:8080/api/email/send', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(errText || 'Failed to send email');
+      }
+
+      responseDiv.textContent = '✅ Email sent successfully!';
+      responseDiv.style.display = 'block';
+      form.reset();
+
+    } catch (err) {
+      errorDiv.textContent = '❌ Error: ' + err.message;
+      errorDiv.style.display = 'block';
+    }
+  });
+
+  // Excel parsing for To/CC/BCC
+  document.getElementById('excelFile').addEventListener('change', async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const data = await file.arrayBuffer();
+    const workbook = XLSX.read(data, { type: 'array' });
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const rows = XLSX.utils.sheet_to_json(sheet);
+
+    const toEmails = [];
+    const ccEmails = [];
+    const bccEmails = [];
+
+    rows.forEach(row => {
+      if (row.To) toEmails.push(...row.To.split(',').map(e => e.trim()));
+      if (row.CC) ccEmails.push(...row.CC.split(',').map(e => e.trim()));
+      if (row.BCC) bccEmails.push(...row.BCC.split(',').map(e => e.trim()));
+    });
+
+    document.getElementById('to').value = toEmails.join(', ');
+    document.getElementById('cc').value = ccEmails.join(', ');
+    document.getElementById('bcc').value = bccEmails.join(', ');
+  });
+</script> -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+<script>
+  const form = document.getElementById('emailForm');
+  const responseDiv = document.getElementById('response');
+  const errorDiv = document.getElementById('error');
+  let emailNameMap = {}; // <-- store email-to-name mapping
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    responseDiv.style.display = 'none';
+    errorDiv.style.display = 'none';
+    responseDiv.textContent = '';
+    errorDiv.textContent = '';
+
+    const to = document.getElementById('to').value.split(',').map(s => s.trim()).filter(s => s);
+    const cc = document.getElementById('cc').value.split(',').map(s => s.trim()).filter(s => s);
+    const bcc = document.getElementById('bcc').value.split(',').map(s => s.trim()).filter(s => s);
+    const subject = document.getElementById('subject').value;
+    const body = document.getElementById('body').value;
+    const attachmentsInput = document.getElementById('attachments');
+
+    const emailRequest = {
+      to: to,
+      cc: cc.length ? cc : null,
+      bcc: bcc.length ? bcc : null,
+      subject: subject,
+      body: body,
+      nameMap: emailNameMap // <-- pass email-name mapping to backend
+    };
+
+    try {
+      const formData = new FormData();
+      const emailBlob = new Blob([JSON.stringify(emailRequest)], { type: "application/json" });
+      formData.append("email", emailBlob);
+
+      for (const file of attachmentsInput.files) {
+        formData.append("attachments", file);
+      }
+
+      const res = await fetch('http://46.202.164.11:8080/api/email/send', {
+      // const res = await fetch('http://localhost:8080/api/email/send', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(errText || 'Failed to send email');
+      }
+
+      responseDiv.textContent = '✅ Email sent successfully!';
+      responseDiv.style.display = 'block';
+      form.reset();
+      emailNameMap = {}; // clear after success
+
+    } catch (err) {
+      errorDiv.textContent = '❌ Error: ' + err.message;
+      errorDiv.style.display = 'block';
+    }
+  });
+
+  // Excel parsing for To/CC/BCC/Name
+  document.getElementById('excelFile').addEventListener('change', async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const data = await file.arrayBuffer();
+    const workbook = XLSX.read(data, { type: 'array' });
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const rows = XLSX.utils.sheet_to_json(sheet);
+
+    const toEmails = [];
+    const ccEmails = [];
+    const bccEmails = [];
+    emailNameMap = {};
+
+    rows.forEach(row => {
+      if (row.Email) {
+        const email = row.Email.trim();
+        toEmails.push(email);
+        if (row.Name) {
+          emailNameMap[email] = row.Name.trim();
+        }
+      }
+
+      if (row.CC) {
+        ccEmails.push(...row.CC.split(',').map(e => e.trim()));
+      }
+
+      if (row.BCC) {
+        bccEmails.push(...row.BCC.split(',').map(e => e.trim()));
+      }
+    });
+
+    document.getElementById('to').value = toEmails.join(', ');
+    document.getElementById('cc').value = ccEmails.join(', ');
+    document.getElementById('bcc').value = bccEmails.join(', ');
+  });
+</script>
+
+
+</body>
+</html>

@@ -29,6 +29,7 @@ const AdminSide = () => {
         <Link href="enquirylist" className="block text-gray-700 hover:text-green-600">Enquiries</Link>
         <Link href="admincategory" className="block text-gray-700 hover:text-green-600">Category</Link>
         <Link href="adminproduct" className="block text-gray-700 hover:text-green-600">Products</Link>
+        <Link href="/emailsender.html" className="block text-gray-700 hover:text-green-600">MultiEmail</Link>
         <a href="#" className="block text-gray-700 hover:text-green-600" onClick={handleLogout}>Logout</a>
       </nav>
     </aside>
