@@ -225,12 +225,25 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-
 <script>
   const form = document.getElementById('emailForm');
-  const responseDiv = document.getElementById('response');
-  const errorDiv = document.getElementById('error');
-  let emailNameMap = {}; // <-- store email-to-name mapping
+  const responseDiv = document.getElementById('response') || createStatusDiv('response', 'green');
+  const errorDiv = document.getElementById('error') || createStatusDiv('error', 'red');
+  let emailNameMap = {}; // email-to-name mapping
+
+  function createStatusDiv(id, color) {
+    const div = document.createElement('div');
+    div.id = id;
+    div.style.display = 'none';
+    div.style.marginTop = '10px';
+    div.style.color = color;
+    form.appendChild(div);
+    return div;
+  }
+
+  function toggleForm(enabled) {
+    [...form.elements].forEach(el => el.disabled = !enabled);
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -238,6 +251,10 @@
     errorDiv.style.display = 'none';
     responseDiv.textContent = '';
     errorDiv.textContent = '';
+
+    toggleForm(false); // disable inputs during sending
+    responseDiv.textContent = '📨 Sending emails... please wait.';
+    responseDiv.style.display = 'block';
 
     const to = document.getElementById('to').value.split(',').map(s => s.trim()).filter(s => s);
     const cc = document.getElementById('cc').value.split(',').map(s => s.trim()).filter(s => s);
@@ -252,7 +269,7 @@
       bcc: bcc.length ? bcc : null,
       subject: subject,
       body: body,
-      nameMap: emailNameMap // <-- pass email-name mapping to backend
+      nameMap: emailNameMap
     };
 
     try {
@@ -264,25 +281,26 @@
         formData.append("attachments", file);
       }
 
-      const res = await fetch('https://animatecustom.com/api/email/send', {
-      // const res = await fetch('http://localhost:8080/api/email/send', {
+const res = await fetch('https://animatecustom.com/api/email/send', {
         method: 'POST',
         body: formData
       });
 
+      const resultText = await res.text();
+
       if (!res.ok) {
-        const errText = await res.text();
-        throw new Error(errText || 'Failed to send email');
+        throw new Error(resultText || 'Failed to send email');
       }
 
       responseDiv.textContent = '✅ Email sent successfully!';
       responseDiv.style.display = 'block';
       form.reset();
-      emailNameMap = {}; // clear after success
-
+      emailNameMap = {};
     } catch (err) {
       errorDiv.textContent = '❌ Error: ' + err.message;
       errorDiv.style.display = 'block';
+    } finally {
+      toggleForm(true); // re-enable form after sending
     }
   });
 
@@ -325,6 +343,7 @@
     document.getElementById('bcc').value = bccEmails.join(', ');
   });
 </script>
+
 
 
 </body>
